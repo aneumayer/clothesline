@@ -1,8 +1,8 @@
-<div id="main">
+<center>
     <table id="options">
         <tr>
             <td>
-                <a href="./?action=account">Create Account</a>
+                <a href="./?action=new_account">Create Account</a>
             </td>
             <td>
                 <a href="./?action=register">Register New Load</a>
@@ -19,8 +19,10 @@
                 <a href="./?action=details">Load Details</a>
             </td>
             <td>
-                <a href="./?action=rank">Rank New Accounts</a>
+                <a href="./?action=rank">Rank Accounts</a>
             </td>
         </tr>
     </table>
-</div>
+    <br />
+    <a href="./?action=login">Admin Login</a>
+</center>

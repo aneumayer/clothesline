@@ -6,5 +6,11 @@
         <script type="text/javascript" src="js/filename.js" ></script>
     </head>
     <body>
-        <h1><?php echo strlen($page_title) ? $page_title : $config["app"]["title"]; ?></h1>
-        <?php if(strlen($page_title)) echo "<a href=\"./\">Back</a>" ?>
+        <table id="header">
+            <tr>
+                <td id="l_side"><?php if(strlen($page_title)) echo "<a href=\"./\">Back</a>" ?></td>
+                <td id="title"><?php echo strlen($page_title) ? $page_title : $config["app"]["title"]; ?></td>
+                <td id="r_side"></td>
+            </tr>
+        </table>
+        

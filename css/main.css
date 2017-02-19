@@ -1,13 +1,25 @@
-div#main {
+/* Header Bar */
+table#header {
     width: 100%;
+}
+table#header td#title{
+    width: 60%;
     text-align: center;
-    vertical-align: middle;
+    font-weight: bold;
+    font-size: 20px;
+}
+table#header td#l_side {
+    width: 20%;
+    text-align: left;
+}
+table#header td#r_side {
+    width: 20%;
+    text-align: right;
 }
 
-table#options {
-    border: 1px solid black;
-}
-
+/* Homepage Table */
 table#options td {
     border: 1px solid black;
+    text-align: center;
+    padding: 10px;
 }

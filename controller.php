@@ -3,7 +3,7 @@
     # For each action include the corresponding model and controller
     switch($_GET["action"]){
         /* ------ General Pages ------ */
-        case "create_account":
+        case "new_account":
             $page_title = "Create Account";
             break;
         
@@ -16,6 +16,10 @@
             break;
             
         /* ------ Admin Pages ------ */
+        case "login":
+            $page_title = "Admin Login";
+            break;
+        
         case "track":
             $page_title = "Track Loads";
             break;
@@ -37,7 +41,6 @@
     }
     
     # Include the standard Footer
-    require_once("model/mdl_create_account.php");
     require_once("view/vw_header.php");
     require_once("view/vw_".$_GET["action"].".php");
     require_once("view/vw_footer.php");

@@ -23,3 +23,15 @@ table#options td {
     text-align: center;
     padding: 10px;
 }
+
+
+/* Form Table */
+table.form td.label {
+    
+}
+table.form td.input {
+    
+}
+table.form td.submit {
+    text-align: right;
+}

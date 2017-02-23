@@ -1,5 +1,9 @@
 <?php
     
+    # If there is no action set then set it to home
+    if(!isset($_GET["action"])) $_GET["action"] = "home";
+    
+    
     # For each action include the corresponding model and controller
     switch($_GET["action"]){
         /* ------ General Pages ------ */
@@ -42,6 +46,11 @@
     
     # Include the standard Footer
     require_once("view/vw_header.php");
-    require_once("view/vw_".$_GET["action"].".php");
+    if(file_exists("model/mdl_".$_GET["action"].".php")) {
+        require_once("model/mdl_".$_GET["action"].".php");
+    }
+    if(file_exists("view/vw_".$_GET["action"].".php")) {
+        require_once("view/vw_".$_GET["action"].".php");
+    }
     require_once("view/vw_footer.php");
 ?>

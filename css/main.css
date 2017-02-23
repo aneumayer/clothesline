@@ -27,11 +27,16 @@ table#options td {
 
 /* Form Table */
 table.form td.label {
-    
+    vertical-align: top;
 }
 table.form td.input {
-    
+    vertical-align: top;
 }
 table.form td.submit {
     text-align: right;
+}
+
+/* Login Page */
+table#login td {
+    vertical-align: top;
 }

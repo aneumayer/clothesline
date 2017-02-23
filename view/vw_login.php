@@ -16,6 +16,10 @@
                             <td class="input"><input type="text" name="email" /></td>
                         </tr>
                         <tr>
+                            <td class="label">Password</td>
+                            <td class="input"><input type="password" name="password" /></td>
+                        </tr>
+                        <tr>
                             <td class="label">Street</td>
                             <td class="input"><input type="text" name="stree" /></td>
                         </tr>
@@ -86,8 +90,14 @@
                             <td class="input"><input type="text" name="zip" /></td>
                         </tr>
                         <tr>
-                            <td class="label">Password</td>
-                            <td class="input"><input type="password" name="password" /></td>
+                            <td class="label">Categories</td>
+                            <td class="input">
+                                <?php 
+                                    foreach($categories as $category) {
+                                        echo("<input type=\"checkbox\" name=\"categories[]\" value=\"{$category['category_id']}\">{$category['name']} <br />");
+                                    }
+                                ?>
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="2" class="submit"><input type="submit" name="submit" value="Create" /></td>
@@ -114,5 +124,3 @@
             </td>
         </tr>
     </table>
-    
-</form>

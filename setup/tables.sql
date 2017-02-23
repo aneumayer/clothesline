@@ -25,6 +25,10 @@ CREATE TABLE category (
     name VARCHAR(150)
 );
 
+ INSERT INTO category (name) VALUES('Women');
+ INSERT INTO category (name) VALUES('Men');
+ INSERT INTO category (name) VALUES('Children');
+
 CREATE TABLE package (
     package_id INTEGER AUTO_INCREMENT PRIMARY KEY,
     current_status CHAR(1),

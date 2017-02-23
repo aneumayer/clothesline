@@ -23,6 +23,4 @@
             </td>
         </tr>
     </table>
-    <br />
-    <a href="./?action=login">Admin Login</a>
 </center>

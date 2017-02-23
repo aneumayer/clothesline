@@ -3,8 +3,8 @@
     # For each action include the corresponding model and controller
     switch($_GET["action"]){
         /* ------ General Pages ------ */
-        case "new_account":
-            $page_title = "Create Account";
+        case "account":
+            $page_title = "Edit Account";
             break;
         
         case "register":
@@ -16,10 +16,6 @@
             break;
             
         /* ------ Admin Pages ------ */
-        case "login":
-            $page_title = "Admin Login";
-            break;
-        
         case "track":
             $page_title = "Track Loads";
             break;
@@ -32,7 +28,11 @@
             $page_title = "Rank New Account";
             break;
         
-        /* ------ Default to the Home Page ------ */
+        /* ------ Common Pages ------ */
+        case "login":
+            $page_title = "Login";
+            break;
+        
         default:
             $page_title = "";
             $_GET["action"] = "home";

@@ -10,7 +10,9 @@
             <tr>
                 <td id="l_side"><?php if(strlen($page_title)) echo "<a href=\"./\">Back</a>" ?></td>
                 <td id="title"><?php echo strlen($page_title) ? $page_title : $config["app"]["title"]; ?></td>
-                <td id="r_side"></td>
+                <td id="r_side">
+                    <a href="./?action=login">Login</a>
+                </td>
             </tr>
         </table>
         

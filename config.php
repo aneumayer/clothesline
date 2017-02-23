@@ -1,6 +1,5 @@
 <?php 
     
-    global $config;
     $config = array(
             "app" => array(
                 "title" => "Clothes Line"

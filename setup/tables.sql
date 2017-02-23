@@ -14,6 +14,8 @@ CREATE TABLE user (
     city VARCHAR(50) NOT NULL,
     state CHAR(2) NOT NULL,
     zip CHAR(5) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    admin INTEGER(1) DEFAULT 0 NOT NULL,
     created DATETIME NOT NULL,
     INDEX (email)
 );
@@ -51,3 +53,6 @@ CREATE TABLE package_category (
     FOREIGN KEY (package_id) REFERENCES package (package_id),
     FOREIGN KEY (category_id) REFERENCES category (category_id)
 );
+
+CREATE USER 'clothesline'@'%' IDENTIFIED BY 'clothes123!@';
+GRANT ALL PRIVILEGES ON clothesline.* TO 'clothesline'@'%' WITH GRANT OPTION;

@@ -19,17 +19,21 @@ class db {
     
     # Attempt 
     public function query($query) {
-        $result_array = array();
         $result = $this->conn->query($query);
         # Throw an error is the query is bad
-        if(!$result){
+        if($result === false){
             trigger_error("Data selection error");
         }
         # Put the results into an array
-        while($row = $result->fetch_assoc()){
-            $result_array[] = $row;
+        if(is_object($result)){
+            $return_result = array();
+            while($row = $result->fetch_assoc()){
+                $return_result[] = $row;
+            }
+        } else {
+            $return_result = true;
         }
-        return $result_array;
+        return $return_result;
     }
     
     public function escape_string($string, $remove_percent = false) {

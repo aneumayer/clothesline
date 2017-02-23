@@ -16,6 +16,12 @@ table#header td#r_side {
     width: 20%;
     text-align: right;
 }
+div.success_message {
+    color: green;
+}
+div.error_message {
+    color: red;
+}
 
 /* Homepage Table */
 table#options td {

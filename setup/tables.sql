@@ -14,6 +14,7 @@ CREATE TABLE user (
     city VARCHAR(50) NOT NULL,
     state CHAR(2) NOT NULL,
     zip CHAR(5) NOT NULL,
+    instructions varchar(1000),
     password VARCHAR(50) NOT NULL,
     admin INTEGER(1) DEFAULT 0 NOT NULL,
     created DATETIME NOT NULL,

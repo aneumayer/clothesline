@@ -1,7 +1,8 @@
+        
     <table id="login">
         <tr>
             <td id="new_account">
-                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">
                     <table class="form">
                         <tr>
                             <td class="label">First Name</td>
@@ -21,7 +22,7 @@
                         </tr>
                         <tr>
                             <td class="label">Street</td>
-                            <td class="input"><input type="text" name="stree" /></td>
+                            <td class="input"><input type="text" name="street" /></td>
                         </tr>
                         <tr>
                             <td class="label">City</td>
@@ -90,6 +91,10 @@
                             <td class="input"><input type="text" name="zip" /></td>
                         </tr>
                         <tr>
+                            <td class="label">Special Instructions</td>
+                            <td class="input"><textarea name="instructions"></textarea></td>
+                        </tr>
+                        <tr>
                             <td class="label">Categories</td>
                             <td class="input">
                                 <?php 
@@ -100,13 +105,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="submit"><input type="submit" name="submit" value="Create" /></td>
+                            <td colspan="2" class="submit"><input type="submit" name="create" value="Create" /></td>
                         </tr>
                     </table>
                 </form>
             </td>
             <td id="login">
-                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">
                     <table class="form">
                         <tr>
                             <td class="label">Email Address</td>
@@ -117,7 +122,7 @@
                             <td class="input"><input type="password" name="password" /></td>
                         </tr>
                         <tr>
-                            <td colspan="2" class="submit"><input type="submit" name="submit" value="Login" /></td>
+                            <td colspan="2" class="submit"><input type="submit" name="login" value="Login" /></td>
                         </tr>
                     </table>
                 </form>

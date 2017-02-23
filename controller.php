@@ -45,10 +45,10 @@
     }
     
     # Include the standard Footer
-    require_once("view/vw_header.php");
     if(file_exists("model/mdl_".$_GET["action"].".php")) {
         require_once("model/mdl_".$_GET["action"].".php");
     }
+    require_once("view/vw_header.php");
     if(file_exists("view/vw_".$_GET["action"].".php")) {
         require_once("view/vw_".$_GET["action"].".php");
     }

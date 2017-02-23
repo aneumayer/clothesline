@@ -8,10 +8,9 @@
         $result = $user->login($_POST["email"], $_POST["password"]);
         if($result) {
             #Start a session and set the users session variables
-            session_start();
-            $_SESSION["logged_id"] = true;
-            $_SESSION["user_id"] = $result['user_id'];
-            $_SESSION["admin"] = $result['admin'];
+            $_SESSION["logged_in"] = true;
+            $_SESSION["user_id"] = $result[0]['user_id'];
+            $_SESSION["admin"] = $result[0]['admin'];
             header('Location: '.$_SERVER["PHP_SELF"]);
         } else {
             $error_message = "Unable to login.";

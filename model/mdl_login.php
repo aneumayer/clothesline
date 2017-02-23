@@ -12,7 +12,7 @@
             $_SESSION["logged_id"] = true;
             $_SESSION["user_id"] = $result['user_id'];
             $_SESSION["admin"] = $result['admin'];
-            header('Location: '.$_SERVER["PHP_SELF"]) ;
+            header('Location: '.$_SERVER["PHP_SELF"]);
         } else {
             $error_message = "Unable to login.";
         }

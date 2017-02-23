@@ -3,7 +3,7 @@
     <head>
         <title><?php echo $config["app"]["title"] . (strlen($page_title) ? " - {$page_title}" : ""); ?></title>
         <link rel="stylesheet" href="css/main.css">
-        <script type="text/javascript" src="js/filename.js" ></script>
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
     </head>
     <body>
         <table id="header">

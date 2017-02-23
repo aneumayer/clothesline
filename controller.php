@@ -36,6 +36,10 @@
         case "login":
             $page_title = "Login";
             break;
+            
+        case "logout":
+            $page_title = "Log Out";
+            break;
         
         default:
             $page_title = "";

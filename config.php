@@ -2,7 +2,8 @@
     
     $config = array(
             "app" => array(
-                "title" => "Clothes Line"
+                "title" => "Clothes Line",
+                "sess" => "CLOTHESLINE"
             ),
             "db" => array(
                 "host" => "localhost",

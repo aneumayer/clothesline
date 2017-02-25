@@ -59,5 +59,11 @@ CREATE TABLE package_category (
     FOREIGN KEY (category_id) REFERENCES category (category_id)
 );
 
+CREATE TABLE session (
+    session_id VARCHAR(255) PRIMARY KEY,
+    last_update DATETIME,
+    session_data TEXT
+);
+
 CREATE USER 'clothesline'@'%' IDENTIFIED BY 'clothes123!@';
 GRANT ALL PRIVILEGES ON clothesline.* TO 'clothesline'@'%' WITH GRANT OPTION;

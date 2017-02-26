@@ -30,6 +30,11 @@ table#options td {
     padding: 10px;
 }
 
+td.h_label {
+    text-align: center;
+    font-weight: bold;
+}
+
 
 /* Form Table */
 table.form td.label {

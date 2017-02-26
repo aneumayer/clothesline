@@ -7,7 +7,7 @@
     $db = new db();
 
     # Setup custom session management with database
-    /*require_once("objects/session.php");
+    require_once("objects/session.php");
     session_set_save_handler(
         array('session', 'open'),
         array('session', 'close'),
@@ -15,7 +15,7 @@
         array('session', 'write'),
         array('session', 'destroy'),
         array('session', 'gc')
-    );*/
+    );
     session_name($config["app"]["sess"]);
     session_start();
     

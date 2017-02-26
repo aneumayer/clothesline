@@ -2,51 +2,74 @@
 
 class session {
     
+    private static $conn = null;
+    
     public static function open($save_path, $session_name) {
-        return true;
+        global $config;
+        self::$conn = @new mysqli($config["db"]["host"], $config["db"]["user"], $config["db"]["pass"], $config["db"]["base"]);
+        if(self::$conn->connect_errno != 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
     
     public static function close() {
-        # No code needed
+        if(self::$conn !== null) {
+            self::$conn->close();
+            self::$conn = null;
+        }
     }
     
-    public static function read($session_id) {
-        global $db;
-        $session_id = $db->escape_string($session_id);
-        $result = $db->query("SELECT * FROM session WHERE session_id = '{$session_id}'");
-        if(is_array($result)) {
-            if(isset($result[0]["session_data"])) {
-                $return_value = $result[0]["session_data"];
-            } else {
-                $return_value = "";
-            }
-        } else {
-            $return_value = "";
+    public static function read($session_id){
+        $session_id = self::$conn->real_escape_string($session_id);
+        $result = @self::$conn->query("SELECT * FROM session WHERE session_id = '{$session_id}'");
+        if(self::$conn->errno != 0) {
+            $err = self::$conn->error;
+            return "";
         }
-        return $return_value;
+        if(($row = @$result->fetch_assoc()) !== null) {
+            $data = $row['session_data'];
+        } else {
+            $data = "";
+        }
+        $result->close();
+        return $data;
     }
     
     public static function write($session_id, $session_data) {
-        global $db;
-        $session_id = $db->escape_string($session_id);
-        $session_data = $db->escape_string($session_data);
-        $db->query("DELETE FROM session WHERE session_id = '{$session_id}'");
-        $db->query("INSERT INTO session (session_id, last_update, session_data) VALUES ('{$session_id}', NOW(), '{$session_data}')");
-        return true;
+        $session_id = self::$conn->real_escape_string($session_id);
+        $result = @self::$conn->query("DELETE FROM session WHERE session_id = '{$session_id}'");
+        if(self::$conn->errno != 0) {
+            return false;
+        }
+        $session_data = self::$conn->real_escape_string($session_data);
+        $result = @self::$conn->query("INSERT INTO session VALUES ('{$session_id}', now(), '{$session_data}')");
+        if(self::$conn->errno != 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
     
     public static function destroy($session_id) {
-        global $db;
-        $session_id = $db->escape_string($session_id);
-        $db->query("DELETE FROM session WHERE session_id = '{$session_id}'");
-        return true;
+        $session_id = self::$conn->real_escape_string($session_id);
+        $result = @self::$conn->query("DELETE FROM session WHERE session_id = '{$session_id}'");
+        if(self::$conn->errno != 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
     
-    public static function gc($max_lifetime) {
-        global $db;
-        $max_date = date('Y-m-d H:m:s', time() - $max_lifetime);
-        $db->query("DELETE FROM session WHERE last_update < '{$max_date}'");
-        return true;
+    public static function gc($lifetime) {
+        $max_date = date('Y-m-d H:m:s', time() - $lifetime);
+        $result = @self::$conn->query("DELETE FROM session WHERE last_update < '{$max_date}'");
+        if(self::$conn->errno != 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
 

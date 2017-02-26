@@ -11,6 +11,7 @@
                 <a href="./?action=account">Edit Account</a>
             </td>
         </tr>
+        <?php if(isset($_SESSION['admin']) && $_SESSION["admin"] == 1) { ?>
         <tr>
             <td>
                 <a href="./?action=track">Track Loads</a>
@@ -22,5 +23,6 @@
                 <a href="./?action=rank">Rank Accounts</a>
             </td>
         </tr>
+        <?php } ?>
     </table>
 </center>

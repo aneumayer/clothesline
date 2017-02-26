@@ -8,14 +8,22 @@
     <body>
         <table id="header">
             <tr>
-                <td id="l_side"><?php if(strlen($page_title)) echo "<a href=\"./\">Back</a>" ?></td>
-                <td id="title"><?php echo strlen($page_title) ? $page_title : $config["app"]["title"]; ?></td>
+                <td id="l_side">
+                    <?php 
+                        if(strlen($page_title) && !$_GET["action"] != "login") {
+                            echo("<a href=\"./\">Back</a>");
+                        } 
+                    ?>
+                </td>
+                <td id="title">
+                        <?php 
+                            echo strlen($page_title) ? $page_title : $config["app"]["title"]; 
+                        ?>
+                </td>
                 <td id="r_side">
                     <?php 
-                        if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+                        if($_GET["action"] != "login") {
                             echo("<a href=\"./?action=logout\">Log Out</a>");
-                        } else {
-                            echo("<a href=\"./?action=login\">Login</a>");
                         }
                     ?>
                 </td>

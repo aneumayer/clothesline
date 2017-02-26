@@ -1,7 +1,11 @@
 <?php
-    
-    # If there is no action set then set it to home
-    if(!isset($_GET["action"])) $_GET["action"] = "home";
+    if(!isset($_SESSION["logged_in"])) {
+        # If the user is not logged in send them to the login page
+        $_GET["action"] = "login";
+    } elseif (!isset($_GET["action"]))  {
+        # If the action is not set default to home
+        $_GET["action"] = "home";
+    }
     
     
     # For each action include the corresponding model and controller

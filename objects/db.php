@@ -33,6 +33,7 @@ class db {
         } else {
             $return_result = true;
         }
+        $result->close();
         return $return_result;
     }
     

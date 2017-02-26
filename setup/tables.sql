@@ -10,16 +10,18 @@ CREATE TABLE user (
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    street VARCHAR(50) NOT NULL,
-    city VARCHAR(50) NOT NULL,
-    state CHAR(2) NOT NULL,
-    zip CHAR(5) NOT NULL,
+    street VARCHAR(50),
+    city VARCHAR(50),
+    state CHAR(2),
+    zip CHAR(5),
     instructions varchar(1000),
     password VARCHAR(50) NOT NULL,
     admin INTEGER(1) DEFAULT 0 NOT NULL,
     created DATETIME NOT NULL,
     INDEX (email)
 );
+
+INSERT INTO user (first_name, last_name, email, password, admin, created) VALUES ('Admin', 'User', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1', NOW());
 
 CREATE TABLE category (
     category_id INTEGER AUTO_INCREMENT PRIMARY KEY,

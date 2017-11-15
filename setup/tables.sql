@@ -39,6 +39,7 @@ CREATE TABLE package (
 );
 
 CREATE TABLE user_category (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
     user_id INTEGER NOT NULL,
     category_id INTEGER NOT NULL,
     position INTEGER,
@@ -47,6 +48,7 @@ CREATE TABLE user_category (
 );
 
 CREATE TABLE user_package (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
     user_id INTEGER NOT NULL,
     package_id INTEGER NOT NULL,
     received INTEGER,
@@ -55,6 +57,7 @@ CREATE TABLE user_package (
 );
 
 CREATE TABLE package_category (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
     package_id INTEGER NOT NULL,
     category_id INTEGER NOT NULL,
     FOREIGN KEY (package_id) REFERENCES package (id),

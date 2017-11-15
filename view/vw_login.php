@@ -1,4 +1,4 @@
-<center>        
+<center>
     <table id="login">
         <tr>
             <td id="new_account">
@@ -54,9 +54,9 @@
                         <tr>
                             <td class="label">Categories</td>
                             <td class="input">
-                                <?php 
+                                <?php
                                     foreach($categories as $category) {
-                                        echo("<input type=\"checkbox\" name=\"categories[]\" value=\"{$category['category_id']}\">{$category['name']} <br />");
+                                        echo("<input type=\"checkbox\" name=\"categories[]\" value=\"{$category->id}\">{$category->name} <br />");
                                     }
                                 ?>
                             </td>

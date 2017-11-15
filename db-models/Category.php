@@ -1,8 +1,8 @@
 <?php
 
-class UserCategory extends ActiveRecord\Model
+class Category extends ActiveRecord\Model
 {
-    static $table_name  = 'user_category';
+    static $table_name  = 'category';
 }
 
 ?>

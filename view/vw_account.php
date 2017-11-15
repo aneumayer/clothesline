@@ -2,27 +2,27 @@
     <table class="form">
         <tr>
             <td class="label">First Name</td>
-            <td class="input"><input type="text" name="first_name" value="<?php echo($account_data["first_name"]); ?>" /></td>
+            <td class="input"><input type="text" name="first_name" value="<?= $user->first_name ?>" /></td>
         </tr>
         <tr>
             <td class="label">Last Name</td>
-            <td class="input"><input type="text" name="last_name" value="<?php echo($account_data["last_name"]); ?>" /></td>
+            <td class="input"><input type="text" name="last_name" value="<?= $user->last_name ?>" /></td>
         </tr>
         <tr>
             <td class="label">Email Address</td>
-            <td class="input"><?php echo($account_data["email"]); ?></td>
+            <td class="input"><?= $user->email ?></td>
         </tr>
         <tr>
             <td class="label">Password</td>
-            <td class="input"><input type="password" name="password" value="<?php echo($account_data["password"]); ?>" /></td>
+            <td class="input"><input type="password" name="password" value="<?= $user->password ?>" /></td>
         </tr>
         <tr>
             <td class="label">Street</td>
-            <td class="input"><input type="text" name="street" value="<?php echo($account_data["street"]); ?>" /></td>
+            <td class="input"><input type="text" name="street" value="<?= $user->street ?>" /></td>
         </tr>
         <tr>
             <td class="label">City</td>
-            <td class="input"><input type="text" name="city" value="<?php echo($account_data["city"]); ?>" /></td>
+            <td class="input"><input type="text" name="city" value="<?= $user->city ?>" /></td>
         </tr>
         <tr>
             <td class="label">State</td>
@@ -30,7 +30,7 @@
                 <select name="state">
                     <?php
                         foreach($config["states"] as $abbrev => $state) {
-                            $selected = ($abbrev == $account_data["state"]) ? "selected=\"seleted\"" : "";
+                            $selected = ($abbrev == $user->state) ? "selected=\"seleted\"" : "";
                             echo("<option value=\"{$abbrev}\" {$selected}>{$state}</option>");
                         }
                     ?>
@@ -39,19 +39,24 @@
         </tr>
         <tr>
             <td class="label">Zip</td>
-            <td class="input"><input type="text" name="zip" value="<?php echo($account_data["zip"]); ?>" /></td>
+            <td class="input"><input type="text" name="zip" value="<?= $user->zip ?>" /></td>
         </tr>
         <tr>
             <td class="label">Special Instructions</td>
-            <td class="input"><textarea name="instructions"><?php echo($account_data["instructions"]); ?></textarea></td>
+            <td class="input"><textarea name="instructions"><?= $user->instructions ?></textarea></td>
         </tr>
         <tr>
             <td class="label">Categories</td>
             <td class="input">
-                <?php 
+                <?php
+                    $uc = [];
+                    $user_categories = UserCategory::find_by_user_id($user->id);
+                    foreach($user_categories as $user_cat) {
+                        $uc[] = $user_cat->category_id;
+                    }
                     foreach($categories as $category) {
-                        $checked = in_array($category['category_id'], $account_data["categories"]) ? "checked=\"checked\"" : "";
-                        echo("<input type=\"checkbox\" name=\"categories[]\" value=\"{$category['category_id']}\" {$checked}>{$category['name']} <br />");
+                        $checked = in_array($category->id, $uc) ? "checked=\"checked\"" : "";
+                        echo("<input type=\"checkbox\" name=\"categories[]\" value=\"{$category->id}\" {$checked}>{$category->name} <br />");
                     }
                 ?>
             </td>

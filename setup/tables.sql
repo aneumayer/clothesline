@@ -1,4 +1,4 @@
-CREATE DATABASE clothesline 
+CREATE DATABASE clothesline
     DEFAULT CHARACTER SET utf8
     DEFAULT COLLATE utf8_general_ci
 ;
@@ -6,7 +6,7 @@ CREATE DATABASE clothesline
 USE clothesline;
 
 CREATE TABLE user (
-    user_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(255) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE user (
 INSERT INTO user (first_name, last_name, email, password, admin, created) VALUES ('Admin', 'User', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1', NOW());
 
 CREATE TABLE category (
-    category_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(150)
 );
 
@@ -33,7 +33,7 @@ CREATE TABLE category (
  INSERT INTO category (name) VALUES('Children');
 
 CREATE TABLE package (
-    package_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
     current_status CHAR(1),
     created DATETIME NOT NULL
 );
@@ -42,23 +42,23 @@ CREATE TABLE user_category (
     user_id INTEGER NOT NULL,
     category_id INTEGER NOT NULL,
     position INTEGER,
-    FOREIGN KEY (user_id) REFERENCES user (user_id),
-    FOREIGN KEY (category_id) REFERENCES category (category_id)
+    FOREIGN KEY (user_id) REFERENCES user (id),
+    FOREIGN KEY (category_id) REFERENCES category (id)
 );
 
 CREATE TABLE user_package (
     user_id INTEGER NOT NULL,
     package_id INTEGER NOT NULL,
     received INTEGER,
-    FOREIGN KEY (user_id) REFERENCES user (user_id),
-    FOREIGN KEY (package_id) REFERENCES package (package_id)
+    FOREIGN KEY (user_id) REFERENCES user (id),
+    FOREIGN KEY (package_id) REFERENCES package (id)
 );
 
 CREATE TABLE package_category (
     package_id INTEGER NOT NULL,
     category_id INTEGER NOT NULL,
-    FOREIGN KEY (package_id) REFERENCES package (package_id),
-    FOREIGN KEY (category_id) REFERENCES category (category_id)
+    FOREIGN KEY (package_id) REFERENCES package (id),
+    FOREIGN KEY (category_id) REFERENCES category (id)
 );
 
 CREATE TABLE session (
@@ -67,5 +67,5 @@ CREATE TABLE session (
     session_data TEXT
 );
 
-CREATE USER 'clothesline'@'%' IDENTIFIED BY 'clothes123!@';
+CREATE USER 'clothesline'@'%' IDENTIFIED BY 'Cl4th2s';
 GRANT ALL PRIVILEGES ON clothesline.* TO 'clothesline'@'%' WITH GRANT OPTION;

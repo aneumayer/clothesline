@@ -1,23 +1,33 @@
-<?php 
-    require_once("objects/package.php");
-    require_once("objects/user.php");
-    
+<?php
+    require_once('objects/package.php');
+    require_once('objects/user.php');
+
     $package = new package();
     $user = new user();
-    
-    if(isset($_POST["update"])) {
+
+    if(isset($_POST['update'])) {
         # If the create account form was submitted
-        $user = new user();
-        $result = $user->update_account($_POST["first_name"], $_POST["last_name"], $_POST["password"], 
-            $_POST["street"], $_POST["city"], $_POST["state"], $_POST["zip"], $_POST["instructions"], $_POST["categories"]);
-        if($result) {
-            $success_message = "Account updated.";
+        $user = new User([
+            'fist_name'    => $_POST['first_name'],
+            'last_name'    => $_POST['last_name'],
+            'password'     => md5($_POST['password']),
+            'street'       => $_POST['street'],
+            'city'         => $_POST['city'],
+            'state'        => $_POST['state'],
+            'zip'          => $_POST['zip'],
+            'instructions' => $_POST['instructions'],
+            'categories'   => $_POST['categories']
+        ]);
+        $user->save();
+
+        if($user->save()) {
+            $success_message = 'Account updated.';
         } else {
-            $error_message = "Unable to update accout.";
+            $error_message = 'Unable to update accout.';
         }
-    } 
-    
-    $account_data = $user->get_user($_SESSION["user_id"]);
+    }
+
+    $account_data = $user->get_user($_SESSION['user_id']);
     $categories = $package->getCategories();
-    
+
 ?>

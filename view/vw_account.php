@@ -10,7 +10,7 @@
         </tr>
         <tr>
             <td class="label">Email Address</td>
-            <td class="input"><?= $user->email ?></td>
+            <td class="input"><input type="text" name="email" value="<?= $user->email ?>" /></td>
         </tr>
         <tr>
             <td class="label">Password</td>
@@ -50,7 +50,6 @@
             <td class="input">
                 <?php
                     $uc = [];
-                    $user_categories = UserCategory::find_by_user_id($user->id);
                     foreach($user_categories as $user_cat) {
                         $uc[] = $user_cat->category_id;
                     }

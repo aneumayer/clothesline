@@ -65,7 +65,7 @@ CREATE TABLE package_category (
 );
 
 CREATE TABLE session (
-    session_id VARCHAR(255) PRIMARY KEY,
+    id VARCHAR(255) PRIMARY KEY,
     last_update DATETIME,
     session_data TEXT
 );

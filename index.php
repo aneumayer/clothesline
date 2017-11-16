@@ -14,12 +14,8 @@
         $cfg->set_default_connection('production');
     });
 
-    # Include the database class an create a global object
-    require_once("objects/db.php");
-    $db = new db();
-
     # Setup custom session management with database
-    require_once("objects/session.php");
+    require_once("session.php");
     session_set_save_handler(
         array('session', 'open'),
         array('session', 'close'),

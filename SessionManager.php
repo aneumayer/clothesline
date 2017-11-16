@@ -1,9 +1,17 @@
 <?php
 
-class session {
+class SessionManager {
+
+    public static function open($save_path, $session_name) {
+        return true;
+    }
+
+    public static function close() {
+        return true;
+    }
 
     public static function read($session_id){
-        $session = Session::find_by_id($session_id);
+        $session = Session::find_by_session_id($session_id);
         if ($session instanceOf Session) {
             return $session->session_data;
         } else {
@@ -12,19 +20,19 @@ class session {
     }
 
     public static function write($session_id, $session_data) {
-        $session = Session::find_by_id($session_id);
+        $session = Session::find_by_session_id($session_id);
         if (!($session instanceOf Session)) {
             $session             = new Session();
             $session->session_id = $session_id;
         }
         $session->session_data = $session_data;
-        $session->last_udate   = 'now';
+        $session->last_update   = 'now';
         $session->save();
         return true;
     }
 
     public static function destroy($session_id) {
-        $session = Session::find_by_id($session_id);
+        $session = Session::find_by_session_id($session_id);
         if ($session instanceOf Session) {
             $session->delete();
         }

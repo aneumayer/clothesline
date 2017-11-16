@@ -15,14 +15,14 @@
     });
 
     # Setup custom session management with database
-    require_once("session.php");
+    require_once("SessionManager.php");
     session_set_save_handler(
-        array('session', 'open'),
-        array('session', 'close'),
-        array('session', 'read'),
-        array('session', 'write'),
-        array('session', 'destroy'),
-        array('session', 'gc')
+       ['SessionManager', 'open'],
+       ['SessionManager', 'close'],
+       ['SessionManager', 'read'],
+       ['SessionManager', 'write'],
+       ['SessionManager', 'destroy'],
+       ['SessionManager', 'gc']
     );
     session_name($config["app"]["sess"]);
     session_start();

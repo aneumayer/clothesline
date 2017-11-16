@@ -6,7 +6,6 @@
         $user->first_name   = $_POST['first_name'];
         $user->last_name    = $_POST['last_name'];
         $user->email        = $_POST['email'];
-        $user->password     = md5($_POST['password']);
         $user->street       = $_POST['street'];
         $user->city         = $_POST['city'];
         $user->state        = $_POST['state'];

@@ -13,10 +13,6 @@
             <td class="input"><input type="text" name="email" value="<?= $user->email ?>" /></td>
         </tr>
         <tr>
-            <td class="label">Password</td>
-            <td class="input"><input type="password" name="password" value="<?= $user->password ?>" /></td>
-        </tr>
-        <tr>
             <td class="label">Street</td>
             <td class="input"><input type="text" name="street" value="<?= $user->street ?>" /></td>
         </tr>

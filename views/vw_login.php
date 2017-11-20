@@ -9,27 +9,31 @@
                         </tr>
                         <tr>
                             <td class="label">First Name</td>
-                            <td class="input"><input type="text" name="first_name" /></td>
+                            <td class="input"><input type="text" name="first_name" value="<?php echo($_POST['first_name']); ?>" /></td>
                         </tr>
                         <tr>
                             <td class="label">Last Name</td>
-                            <td class="input"><input type="text" name="last_name" /></td>
+                            <td class="input"><input type="text" name="last_name" value="<?php echo($_POST['last_name']); ?>"/></td>
                         </tr>
                         <tr>
                             <td class="label">Email Address</td>
-                            <td class="input"><input type="text" name="email" /></td>
+                            <td class="input"><input type="text" name="email" value="<?php echo($_POST['email']); ?>"/></td>
                         </tr>
                         <tr>
                             <td class="label">Password</td>
                             <td class="input"><input type="password" name="password" /></td>
                         </tr>
                         <tr>
+                            <td class="label">Confirm Password</td>
+                            <td class="input"><input type="password" name="password2" /></td>
+                        </tr>
+                        <tr>
                             <td class="label">Street</td>
-                            <td class="input"><input type="text" name="street" /></td>
+                            <td class="input"><input type="text" name="street" value="<?php echo($_POST['street']); ?>"/></td>
                         </tr>
                         <tr>
                             <td class="label">City</td>
-                            <td class="input"><input type="text" name="city" /></td>
+                            <td class="input"><input type="text" name="city" value="<?php echo($_POST['city']); ?>"/></td>
                         </tr>
                         <tr>
                             <td class="label">State</td>
@@ -37,7 +41,8 @@
                                 <select name="state">
                                     <?php
                                         foreach($config["states"] as $abbrev => $state) {
-                                            echo("<option value=\"{$abbrev}\">{$state}</option>");
+                                            $selected = ($_POST['state'] == $abbrev) ? 'selected' : '';
+                                            echo("<option value=\"{$abbrev}\" $selected>{$state}</option>");
                                         }
                                     ?>
                                 </select>
@@ -45,18 +50,19 @@
                         </tr>
                         <tr>
                             <td class="label">Zip</td>
-                            <td class="input"><input type="text" name="zip" /></td>
+                            <td class="input"><input type="text" name="zip" value="<?php echo($_POST['zip']); ?>"/></td>
                         </tr>
                         <tr>
                             <td class="label">Special Instructions</td>
-                            <td class="input"><textarea name="instructions"></textarea></td>
+                            <td class="input"><textarea name="instructions"><?php echo($_POST['instructions']); ?></textarea></td>
                         </tr>
                         <tr>
                             <td class="label">Categories</td>
                             <td class="input">
                                 <?php
                                     foreach($categories as $category) {
-                                        echo("<input type=\"checkbox\" name=\"categories[]\" value=\"{$category->id}\">{$category->name} <br />");
+                                        $checked = (in_array($category->id, $_POST['categories'])) ? 'checked' : '';
+                                        echo("<input type=\"checkbox\" name=\"categories[]\" value=\"{$category->id}\" $checked>{$category->name} <br />");
                                     }
                                 ?>
                             </td>

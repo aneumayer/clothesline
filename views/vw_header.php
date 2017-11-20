@@ -8,7 +8,7 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse bg-primary" style="background-color: #024872">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="./"><?= $config["app"]["title"] ?></a>

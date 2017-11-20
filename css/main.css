@@ -37,17 +37,7 @@ td.h_label {
 
 
 /* Form Table */
-table.form td.label {
-    vertical-align: top;
-}
-table.form td.input {
-    vertical-align: top;
-}
-table.form td.submit {
-    text-align: right;
-}
-
-/* Login Page */
-table#login td {
+td.split_form {
+    width: 450px;
     vertical-align: top;
 }

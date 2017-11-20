@@ -2,7 +2,7 @@
 
     $config = array(
             "app" => array(
-                "title" => "Clothes Line",
+                "title" => "Clothesline",
                 "sess" => "CLOTHESLINE"
             ),
             "db" => array(

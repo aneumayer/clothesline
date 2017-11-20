@@ -12,7 +12,7 @@
     switch($_GET["action"]){
         /* ------ General Pages ------ */
         case "account":
-            $page_title = "Edit Account";
+            $page_title = "My Account";
             break;
 
         case "register":

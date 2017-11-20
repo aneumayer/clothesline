@@ -35,13 +35,16 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li <?= ($_GET['action'] == 'account') ? "class=\"active\"" : "";?>>
-                            <a href="./?action=account"><span class="glyphicon glyphicon-user"></span> Account</a>
+                            <a href="./?action=account"><span class="glyphicon glyphicon-user"></span> My Account</a>
                         </li>
                         <li><a href="./?action=logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
                     </ul>
                 <?php endif; ?>
             </div>
         </nav>
+        <div class="page-header text-center">
+            <h1><?= (strlen($page_title)) ? $page_title : "Home" ?></h1>
+        </div>
         <?php if (isset($success_message)) : ?>
             <div class="alert alert-success">
                 <?= $success_message ?>

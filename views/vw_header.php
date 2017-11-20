@@ -22,19 +22,31 @@
                             <li <?= ($_GET['action'] == 'details') ? "class=\"active\"" : "";?>><a href="./?action=details">Load Details</a></li>
                             <li <?= ($_GET['action'] == 'rank') ? "class=\"active\"" : "";?>><a href="./?action=rank">Rank Accounts</a></li>
                         <?php } ?>
-                        <li <?= ($_GET['action'] == 'account') ? "class=\"active\"" : "";?>><a href="./?action=account">My Account</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="./?action=account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
                         <li><a href="./?action=logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
                     </ul>
                 <?php endif; ?>
             </div>
         </nav>
-        <?php
-            if(isset($success_message)) {
-                echo("<div class=\"success_message\">{$success_message}</div>");
-            }
-            if(isset($error_message)) {
-                echo("<div class=\"error_message\">{$error_message}</div>");
-            }
-        ?>
+        <?php if (isset($success_message)) : ?>
+            <div class="alert alert-success">
+                <?= $success_message ?>
+            </div>
+        <?php endif; ?>
+        <?php if (isset($info_message)) : ?>
+            <div class="alert alert-info">
+                <?= $info_message ?>
+            </div>
+        <?php endif; ?>
+        <?php if (isset($warning_message)) : ?>
+            <div class="alert alert-warning">
+                <?= $warning_message ?>
+            </div>
+        <?php endif; ?>
+        <?php if (isset($error_message)) : ?>
+            <div class="alert alert-danger">
+                <?= $error_message ?>
+            </div>
+        <?php endif; ?>

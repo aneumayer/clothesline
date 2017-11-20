@@ -6,7 +6,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-5" for="first_name">First Name:</label>
                         <div class="col-md-7">
-                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name" value="<?php echo($_POST['first_name']); ?>">
+                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name" required="true" value="<?php echo($_POST['first_name']); ?>">
                         </div>
                     </div>
                     <div class="form-group">
@@ -18,37 +18,37 @@
                     <div class="form-group">
                         <label class="control-label col-md-5" for="email">Email Address:</label>
                         <div class="col-md-7">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" value="<?php echo($_POST['email']); ?>">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required="true" value="<?php echo($_POST['email']); ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-5" for="password">Password:</label>
                         <div class="col-md-7">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+                            <input type="password" class="form-control" id="password" name="password" required="true" placeholder="Enter password">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-5" for="password2">Confirm Password:</label>
                         <div class="col-md-7">
-                            <input type="password" class="form-control" id="password2" name="password2" placeholder="Enter password">
+                            <input type="password" class="form-control" id="password2" name="password2" required="true" placeholder="Enter password">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-5" for="street">Street Address:</label>
                         <div class="col-md-7">
-                            <input type="text" class="form-control" id="street" name="street" placeholder="Enter street address" value="<?php echo($_POST['street']); ?>">
+                            <input type="text" class="form-control" id="street" name="street" placeholder="Enter street address" required="true" value="<?php echo($_POST['street']); ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-5" for="city">City:</label>
                         <div class="col-md-7">
-                            <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" value="<?php echo($_POST['city']); ?>">
+                            <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" required="true" value="<?php echo($_POST['city']); ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-5" for="state">State:</label>
                         <div class="col-md-7">
-                            <select name="state" class="form-control">
+                            <select name="state" class="form-control" required="true">
                                 <?php
                                     foreach($config["states"] as $abbrev => $state) {
                                         $selected = ($_POST['state'] == $abbrev) ? 'selected' : '';
@@ -61,7 +61,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-5" for="zip">Zip Code:</label>
                         <div class="col-md-7">
-                            <input type="zip" class="form-control" id="zip" name="zip" placeholder="Enter zip code" value="<?php echo($_POST['zip']); ?>">
+                            <input type="zip" class="form-control" id="zip" name="zip" placeholder="Enter zip code" required="true" value="<?php echo($_POST['zip']); ?>">
                         </div>
                     </div>
                     <div class="form-group">

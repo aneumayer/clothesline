@@ -6,7 +6,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-5" for="first_name">First Name:</label>
                     <div class="col-md-7">
-                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name" value="<?= $user->first_name ?>">
+                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name" required="true" value="<?= $user->first_name ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -18,25 +18,25 @@
                 <div class="form-group">
                     <label class="control-label col-md-5" for="email">Email Address:</label>
                     <div class="col-md-7">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" value="<?= $user->email ?>">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required="true" value="<?= $user->email ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5" for="street">Street Address:</label>
                     <div class="col-md-7">
-                        <input type="text" class="form-control" id="street" name="street" placeholder="Enter street address" value="<?= $user->street ?>">
+                        <input type="text" class="form-control" id="street" name="street" placeholder="Enter street address" required="true" value="<?= $user->street ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5" for="city">City:</label>
                     <div class="col-md-7">
-                        <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" value="<?= $user->city ?>">
+                        <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" required="true" value="<?= $user->city ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-5" for="state">State:</label>
                     <div class="col-md-7">
-                        <select name="state" class="form-control">
+                        <select name="state" class="form-control" required="true">
                             <?php
                                 foreach($config["states"] as $abbrev => $state) {
                                     $selected = ($user->state == $abbrev) ? 'selected' : '';
@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-5" for="zip">Zip Code:</label>
                     <div class="col-md-7">
-                        <input type="text" class="form-control" id="zip" name="zip" placeholder="Enter zip code" value="<?= $user->zip ?>">
+                        <input type="text" class="form-control" id="zip" name="zip" placeholder="Enter zip code" required="true" value="<?= $user->zip ?>">
                     </div>
                 </div>
                 <div class="form-group">

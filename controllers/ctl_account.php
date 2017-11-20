@@ -1,7 +1,7 @@
 <?php
     $user = User::find('first', ['id' => $_SESSION['user_id']]);
 
-    if(isset($_POST['update'])) {
+    if (isset($_POST['update'])) {
         # If the create account form was submitted
         $user->first_name   = $_POST['first_name'];
         $user->last_name    = $_POST['last_name'];
@@ -53,12 +53,31 @@
             }
         }
 
-        if($user->save()) {
+        if ($user->save()) {
             $success_message = 'Account updated.';
         } else {
             $error_message = 'Unable to update accout.';
         }
     }
+
+    if (isset($_POST['reset'])) {
+        $current = $user->password;
+        if ($current == md5($_POST['old_password'])) {
+            if ($_POST['password'] == $_POST['password2']) {
+                $user->password = md5($_POST['password']);
+                if ($user->save()) {
+                    $success_message = 'Password updated.';
+                } else {
+                    $error_message = 'Unable to update accout.';
+                }
+            } else {
+                $error_message = "Password fields did not match.";
+            }
+        } else {
+            $error_message = 'Old password incorrect.';
+        }
+    }
+
     $categories = Category::find('all');
     $user_categories = UserCategory::find('all', ['conditions' => ['user_id = ?', $user->id]]);
 

@@ -1,5 +1,14 @@
 /* Form Table */
 td.split_form {
-    width: 450px;
+    width: 460px;
     vertical-align: top;
+    padding: 20px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+header {
+    margin-bottom: 30px;
 }

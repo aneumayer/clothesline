@@ -3,48 +3,52 @@
     <head>
         <title><?= $config["app"]["title"] . (strlen($page_title) ? " - {$page_title}" : ""); ?></title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/main.css">
         <script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-inverse bg-primary">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><?= $config["app"]["title"] ?></a>
-                </div>
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+            <a class="navbar-brand" href="./"><?= $config["app"]["title"] ?></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <?php if ($_GET["action"] != "login") : ?>
-                    <ul class="nav navbar-nav">
-                        <li <?= ($_GET['action'] == 'register') ? "class=\"active\"" : "";?>>
-                            <a href="./?action=register">Register New Load</a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item  <?= ($_GET['action'] == 'register') ? "active" : "";?>">
+                            <a class="nav-link" href="./?action=register">Register New Load</a>
                         </li>
-                        <li <?= ($_GET['action'] == 'check_in') ? "class=\"active\"" : "";?>>
-                            <a href="./?action=check_in">Check in Load</a>
+                        <li class="nav-item  <?= ($_GET['action'] == 'check_in') ? "active" : "";?>">
+                            <a class="nav-link" href="./?action=check_in">Check in Load</a>
                         </li>
-                        <?php if(isset($_SESSION['admin']) && $_SESSION["admin"] == 1) { ?>
-                            <li <?= ($_GET['action'] == 'track') ? "class=\"active\"" : "";?>>
-                                <a href="./?action=track">Track Loads</a>
+                        <?php if(isset($_SESSION['admin']) && $_SESSION["admin"] == 1) : ?>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Admin
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item <?= ($_GET['action'] == 'track') ? "active" : "";?>" href="./?action=track">Track Loads</a>
+                                    <a class="dropdown-item <?= ($_GET['action'] == 'details') ? "active" : "";?>" href="./?action=details">Load Details</a>
+                                    <a class="dropdown-item <?= ($_GET['action'] == 'rank') ? "active" : "";?>" href="./?action=rank">Rank Accounts</a>
+                                </div>
                             </li>
-                            <li <?= ($_GET['action'] == 'details') ? "class=\"active\"" : "";?>>
-                                <a href="./?action=details">Load Details</a>
-                            </li>
-                            <li <?= ($_GET['action'] == 'rank') ? "class=\"active\"" : "";?>>
-                                <a href="./?action=rank">Rank Accounts</a>
-                            </li>
-                        <?php } ?>
+                        <?php endif; ?>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li <?= ($_GET['action'] == 'account') ? "class=\"active\"" : "";?>>
-                            <a href="./?action=account"><span class="glyphicon glyphicon-user"></span> My Account</a>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item  <?= ($_GET['action'] == 'account') ? "active" : "";?>">
+                            <a class="nav-link" href="./?action=account"><i class="fa fa-user" aria-hidden="true"></i> My Account</a>
                         </li>
-                        <li><a href="./?action=logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+                        <li><a class="nav-link" href="./?action=logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
                     </ul>
                 <?php endif; ?>
-            </div>
         </nav>
-        <div class="page-header text-center">
+        <header class="text-center">
             <h1><?= (strlen($page_title)) ? $page_title : "Home" ?></h1>
-        </div>
+        </header>
         <?php if (isset($success_message)) : ?>
             <div class="alert alert-success">
                 <?= $success_message ?>

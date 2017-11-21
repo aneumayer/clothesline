@@ -38,7 +38,7 @@
 
         /* ------ Common Pages ------ */
         case "login":
-            $page_title = "Login";
+            $page_title = "Create Account / Login";
             break;
 
         case "logout":

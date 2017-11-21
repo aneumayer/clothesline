@@ -23,7 +23,6 @@
         if ($_POST['password'] == $_POST['password2']) {
             $user = new User([
                 'first_name'   => $_POST['first_name'],
-                'last_name'    => $_POST['last_name'],
                 'email'        => $_POST['email'],
                 'password'     => md5($_POST['password']),
                 'street'       => $_POST['street'],
@@ -31,7 +30,6 @@
                 'state'        => $_POST['state'],
                 'zip'          => $_POST['zip'],
                 'instructions' => $_POST['instructions'],
-                'created'      => 'now'
             ]);
             $user->save();
 

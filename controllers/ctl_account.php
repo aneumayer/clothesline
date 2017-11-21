@@ -4,7 +4,6 @@
     if (isset($_POST['update'])) {
         # If the create account form was submitted
         $user->first_name   = $_POST['first_name'];
-        $user->last_name    = $_POST['last_name'];
         $user->email        = $_POST['email'];
         $user->street       = $_POST['street'];
         $user->city         = $_POST['city'];

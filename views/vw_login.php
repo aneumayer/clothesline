@@ -10,12 +10,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-5" for="last_name">Last Name:</label>
-                        <div class="col-md-7">
-                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter last name" value="<?php echo($_POST['last_name']); ?>">
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="control-label col-md-5" for="email">Email Address:</label>
                         <div class="col-md-7">
                             <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required="true" value="<?php echo($_POST['email']); ?>">
@@ -65,7 +59,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-5" for="instruction">Special Instrcutions:</label>
+                        <label class="control-label col-md-5" for="instruction">Special Instructions:</label>
                         <div class="col-md-7">
                             <textarea name="instructions" class="form-control"><?php echo($_POST['instructions']); ?></textarea>
                         </div>

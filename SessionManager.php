@@ -26,7 +26,6 @@ class SessionManager {
             $session->session_id = $session_id;
         }
         $session->session_data = $session_data;
-        $session->last_update   = 'now';
         $session->save();
         return true;
     }
@@ -41,7 +40,7 @@ class SessionManager {
 
     public static function gc($lifetime) {
         $max_date = date('Y-m-d H:m:s', time() - $lifetime);
-        $sessions = Session::find('all', ['conditions' => ['last_update < ?', $max_date]]);
+        $sessions = Session::find('all', ['conditions' => ['updated_at < ?', $max_date]]);
         foreach($sessions as $session) {
             $session->delete();
         }

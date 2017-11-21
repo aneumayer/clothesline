@@ -12,28 +12,28 @@
     switch($_GET["action"]){
         /* ------ General Pages ------ */
         case "account":
-            $page_title = "My Account";
+            $page_title = "Account";
             break;
 
-        case "register":
-            $page_title = "Register New Load";
+        case "create":
+            $page_title = "Create Bag";
             break;
 
         case "check_in":
-            $page_title = "Check In Load";
+            $page_title = "Check In Bag";
             break;
 
         /* ------ Admin Pages ------ */
         case "track":
-            $page_title = "Track Loads";
+            $page_title = "Track Bags";
             break;
 
         case "details":
-            $page_title = "Load Details";
+            $page_title = "Bag Details";
             break;
 
         case "rank":
-            $page_title = "Rank New Account";
+            $page_title = "Rank Accounts";
             break;
 
         /* ------ Common Pages ------ */

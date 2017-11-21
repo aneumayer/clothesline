@@ -11,38 +11,31 @@
             <div class="form-group row">
                 <label class="col-form-label col-5" for="email">Email Address:</label>
                 <div class="col-7">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required="true" value="<?= $user->email ?>">
+                    <input type="email" class="form-control" id="email" name="email" readonly value="<?= $user->email ?>">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-form-label col-5" for="street">Street Address:</label>
                 <div class="col-7">
-                    <input type="text" class="form-control" id="street" name="street" placeholder="Enter street address" required="true" value="<?= $user->street ?>">
+                    <input type="text" class="form-control" id="street" name="street" readonly value="<?= $user->street ?>">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-form-label col-5" for="city">City:</label>
                 <div class="col-7">
-                    <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" required="true" value="<?= $user->city ?>">
+                    <input type="text" class="form-control" id="city" name="city" readonly value="<?= $user->city ?>">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-form-label col-5" for="state">State:</label>
                 <div class="col-7">
-                    <select name="state" class="form-control" required="true">
-                        <?php
-                            foreach($config["states"] as $abbrev => $state) {
-                                $selected = ($user->state == $abbrev) ? 'selected' : '';
-                                echo("<option value=\"{$abbrev}\" $selected>{$state}</option>");
-                            }
-                        ?>
-                    </select>
+                    <input type="text" class="form-control" id="state" name="state" readonly value="<?= $config["states"][$user->state] ?>">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-form-label col-5" for="zip">Zip Code:</label>
                 <div class="col-7">
-                    <input type="text" class="form-control" id="zip" name="zip" placeholder="Enter zip code" required="true" value="<?= $user->zip ?>">
+                    <input type="text" class="form-control" id="zip" name="zip" readonly value="<?= $user->zip ?>">
                 </div>
             </div>
             <div class="form-group row">

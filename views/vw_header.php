@@ -19,11 +19,11 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <?php if ($_GET["action"] != "login") : ?>
                     <ul class="navbar-nav">
-                        <li class="nav-item  <?= ($_GET['action'] == 'register') ? "active" : "";?>">
-                            <a class="nav-link" href="./?action=register">Register New Load</a>
+                        <li class="nav-item  <?= ($_GET['action'] == 'create') ? "active" : "";?>">
+                            <a class="nav-link" href="./?action=create">Create Bag</a>
                         </li>
                         <li class="nav-item  <?= ($_GET['action'] == 'check_in') ? "active" : "";?>">
-                            <a class="nav-link" href="./?action=check_in">Check in Load</a>
+                            <a class="nav-link" href="./?action=check_in">Check in Bag</a>
                         </li>
                         <?php if(isset($_SESSION['admin']) && $_SESSION["admin"] == 1) : ?>
                             <li class="nav-item dropdown">
@@ -31,7 +31,7 @@
                                     Admin
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item <?= ($_GET['action'] == 'track') ? "active" : "";?>" href="./?action=track">Track Loads</a>
+                                    <a class="dropdown-item <?= ($_GET['action'] == 'track') ? "active" : "";?>" href="./?action=track">Track Bags</a>
                                     <a class="dropdown-item <?= ($_GET['action'] == 'details') ? "active" : "";?>" href="./?action=details">Load Details</a>
                                     <a class="dropdown-item <?= ($_GET['action'] == 'rank') ? "active" : "";?>" href="./?action=rank">Rank Accounts</a>
                                 </div>
@@ -40,7 +40,7 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item  <?= ($_GET['action'] == 'account') ? "active" : "";?>">
-                            <a class="nav-link" href="./?action=account"><i class="fa fa-user" aria-hidden="true"></i> My Account</a>
+                            <a class="nav-link" href="./?action=account"><i class="fa fa-user" aria-hidden="true"></i> Account</a>
                         </li>
                         <li><a class="nav-link" href="./?action=logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
                     </ul>

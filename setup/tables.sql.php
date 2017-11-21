@@ -1,3 +1,7 @@
+<?php
+    die();
+?>
+
 CREATE DATABASE clothesline
     DEFAULT CHARACTER SET utf8
     DEFAULT COLLATE utf8_general_ci

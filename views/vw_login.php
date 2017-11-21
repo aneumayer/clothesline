@@ -68,7 +68,12 @@
                 <div class="col-7">
                     <?php
                         foreach($categories as $category) {
-                            $checked = (in_array($category->id, $_POST['categories'])) ? 'checked' : '';
+                            $checked = '';
+                            if (isset($_POST['categories'])) {
+                                if ((in_array($category->id, $_POST['categories']))) {
+                                    $checked =  'checked';
+                                }
+                            }
                             echo("<div class=\"form-check\"><label class=\"form-check-label\">");
                             echo("<input type=\"checkbox\" class=\"form-check-input\" name=\"categories[]\" value=\"{$category->id}\" $checked> {$category->name}");
                             echo("</label></div>");

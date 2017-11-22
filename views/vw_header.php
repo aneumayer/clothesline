@@ -12,7 +12,7 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary navbar-fixed-top">
             <a class="navbar-brand" href="./"><?= $config["app"]["title"] ?></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,27 +46,29 @@
                         <li><a class="nav-link" href="./?action=logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
                     </ul>
                 <?php endif; ?>
+            </div>
         </nav>
-        <header class="text-center">
-            <h1><?= (strlen($page_title)) ? $page_title : "Home" ?></h1>
-        </header>
-        <?php if (isset($success_message)) : ?>
-            <div class="alert alert-success">
-                <?= $success_message ?>
-            </div>
-        <?php endif; ?>
-        <?php if (isset($info_message)) : ?>
-            <div class="alert alert-info">
-                <?= $info_message ?>
-            </div>
-        <?php endif; ?>
-        <?php if (isset($warning_message)) : ?>
-            <div class="alert alert-warning">
-                <?= $warning_message ?>
-            </div>
-        <?php endif; ?>
-        <?php if (isset($error_message)) : ?>
-            <div class="alert alert-danger">
-                <?= $error_message ?>
-            </div>
-        <?php endif; ?>
+        <div class="container">
+            <header class="text-center">
+                <h1><?= (strlen($page_title)) ? $page_title : "Home" ?></h1>
+            </header>
+            <?php if (isset($success_message)) : ?>
+                <div class="alert alert-success">
+                    <?= $success_message ?>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($info_message)) : ?>
+                <div class="alert alert-info">
+                    <?= $info_message ?>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($warning_message)) : ?>
+                <div class="alert alert-warning">
+                    <?= $warning_message ?>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($error_message)) : ?>
+                <div class="alert alert-danger">
+                    <?= $error_message ?>
+                </div>
+            <?php endif; ?>

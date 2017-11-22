@@ -1,8 +1,7 @@
 <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">
     <div class="form-group row">
-        <div class="col-3"></div>
-        <label class="col-form-label col-2 text-right" for="category">Category:</label>
-        <div class="col-2">
+        <label class="col-form-label col-3 text-right" for="category">Category:</label>
+        <div class="col-6">
             <select name="category" class="form-control" required="true">
                 <?php
                     foreach($categories as $cat) {
@@ -13,9 +12,8 @@
                 ?>
             </select>
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <input type="submit" name="create" value="Create" />
         </div>
-        <div class="col-3"></div>
     </div>
 </form>

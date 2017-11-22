@@ -1,6 +1,5 @@
-<div class="row centered">
-    <div class="col-3"></div>
-    <div class="col-3">
+<div class="row">
+    <div class="col-6">
         <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">
             <div class="form-group row">
                 <label class="col-form-label col-5" for="first_name">First Name:</label>
@@ -82,57 +81,45 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" required="true">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">
+                <label class="form-check-label col-12" for="no-throw-agreement">
+                    <input id="no-throw-agreement" type="checkbox" class="form-check-input" required="true">
                         I agree to deliver clothesline bags to the next address on the
                         list and will not sell, throw away, or donate the items delivered to me.
-                    </span>
                 </label>
             </div>
             <div class="form-group row">
-                <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" required="true">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">
+                <label class="form-check-label col-12" for="address-listing-agreement">
+                    <input id="address-listing-agreement" type="checkbox" class="form-check-input" required="true">
                         I acknowledge that my home address will be listed in a document available
                         to all participants in The Charlottesville Clothesline. My name and email
                         address will NOT be included in this document.
-                    </span>
                 </label>
             </div>
             <div class="form-group row">
-                <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" required="true">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">
+                <label class="form-check-label col-12" for="risk-agreement">
+                    <input id="risk-agreement" type="checkbox" class="form-check-input" required="true">
                         I participate in The Charlottesville Clothesline community project at my own risk.
                         By joining, I agree to hold neither the list owners, moderators, nor anyone affiliated
                         with Connections, Inc. responsible or liable for any circumstance resulting from a
                         clothesline-related donation, delivery, or communication.
-                    </span>
                 </label>
             </div>
             <div class="form-group row">
-                <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" required="true">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">
-                    I will reply to periodic emails sent from the program administrators asking me to confirm
-                    my registration details in order to remain in the program and will contact Connections, Inc.
-                    with any location changes as necessary.
-                    </span>
+                <label class="form-check-label col-12" for="email-agreement">
+                    <input id="email-agreement" type="checkbox" class="form-check-input" required="true">
+                        I will reply to periodic emails sent from the program administrators asking me to confirm
+                        my registration details in order to remain in the program and will contact Connections, Inc.
+                        with any location changes as necessary.
                 </label>
             </div>
             <div class="form-group row">
-                <div class="col-md-12 text-right">
+                <div class="col-12 text-right">
                     <input type="submit" name="create" value="Create" />
                 </div>
             </div>
         </form>
     </div>
-    <div class="col-3">
+    <div class="col-6">
         <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">
             <div class="form-group row">
                 <label class="col-form-label col-5" for="login_email">Email Address:</label>
@@ -153,5 +140,4 @@
             </div>
         </form>
     </div>
-    <div class="col-3"></div>
 </div>

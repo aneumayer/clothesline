@@ -1,19 +1,24 @@
+<header class="text-center">
+    <h1><?= (strlen($page_title)) ? $page_title : "Home" ?></h1>
+</header>
 <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">
-    <div class="form-group row">
-        <label class="col-form-label col-md-2" for="category">Category:</label>
-        <div class="col-md-3">
-            <select name="category" class="form-control" required="true">
-                <?php
-                    foreach($categories as $cat) {
-                        if($cat instanceOf UserCategory) {
-                            echo("<option value=\"{$cat->category_id}\">{$cat->name}</option>");
+    <div class="col-md-6 mx-auto">
+        <div class="form-group row">
+            <label class="col-form-label col-md-4" for="category">Category:</label>
+            <div class="col-md-4">
+                <select name="category" class="form-control" required="true">
+                    <?php
+                        foreach($categories as $cat) {
+                            if($cat instanceOf UserCategory) {
+                                echo("<option value=\"{$cat->category_id}\">{$cat->name}</option>");
+                            }
                         }
-                    }
-                ?>
-            </select>
+                    ?>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <input type="submit" name="create" value="Create" />
+            </div>
         </div>
-        <div class="col-md-2">
-            <input type="submit" name="create" value="Create" />
-        </div>
-    </div>
+    </div.
 </form>

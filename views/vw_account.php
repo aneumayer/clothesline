@@ -62,8 +62,8 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-md-12 text-right">
-                        <input type="submit" name="update" value="Update" />
+                    <div class="col-md-12 text-right">
+                        <input type="submit" class="float-md-right" name="update" value="Update" />
                     </div>
                 </div>
             </form>

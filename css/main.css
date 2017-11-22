@@ -7,8 +7,13 @@ td.split_form {
 
 .navbar {
     margin-bottom: 20px;
+    background-color: #024872;
 }
 
 header {
     margin-bottom: 30px;
+}
+
+h1, .nav-link {
+    color: #2d9214;
 }

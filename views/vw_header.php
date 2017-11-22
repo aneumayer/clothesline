@@ -12,7 +12,7 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary navbar-fixed-top">
+        <nav class="navbar navbar-toggleable-md navbar-inverse navbar-fixed-top">
             <a class="navbar-brand" href="./"><?= $config["app"]["title"] ?></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

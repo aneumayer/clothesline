@@ -21,10 +21,10 @@
                 <?php if ($_GET["action"] != "login") : ?>
                     <ul class="navbar-nav">
                         <li class="nav-item  <?= ($_GET['action'] == 'create') ? "active" : "";?>">
-                            <a class="nav-link" href="./?action=create">Create Bag</a>
+                            <a class="nav-link" href="./?action=create">Create a Load</a>
                         </li>
                         <li class="nav-item  <?= ($_GET['action'] == 'check_in') ? "active" : "";?>">
-                            <a class="nav-link" href="./?action=check_in">Check in Bag</a>
+                            <a class="nav-link" href="./?action=check_in">Check in Load</a>
                         </li>
                         <?php if(isset($_SESSION['admin']) && $_SESSION["admin"] == 1) : ?>
                             <li class="nav-item dropdown">
@@ -32,7 +32,7 @@
                                     Admin
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item <?= ($_GET['action'] == 'track') ? "active" : "";?>" href="./?action=track">Track Bags</a>
+                                    <a class="dropdown-item <?= ($_GET['action'] == 'track') ? "active" : "";?>" href="./?action=track">Track Loads</a>
                                     <a class="dropdown-item <?= ($_GET['action'] == 'details') ? "active" : "";?>" href="./?action=details">Load Details</a>
                                     <a class="dropdown-item <?= ($_GET['action'] == 'rank') ? "active" : "";?>" href="./?action=rank">Rank Accounts</a>
                                 </div>

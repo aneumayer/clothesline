@@ -16,20 +16,20 @@
             break;
 
         case "create":
-            $page_title = "Create Bag";
+            $page_title = "Create a Load";
             break;
 
         case "check_in":
-            $page_title = "Check In Bag";
+            $page_title = "Check In Load";
             break;
 
         /* ------ Admin Pages ------ */
         case "track":
-            $page_title = "Track Bags";
+            $page_title = "Track Loads";
             break;
 
         case "details":
-            $page_title = "Bag Details";
+            $page_title = "Load Details";
             break;
 
         case "rank":

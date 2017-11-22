@@ -30,6 +30,9 @@
                             <li class="nav-item  <?= ($_GET['action'] == 'rank') ? "active" : "";?>">
                                 <a class="nav-link" href="./?action=rank">Rank Accounts</a>
                             </li>
+                            <li class="nav-item  <?= ($_GET['action'] == 'accounts') ? "active" : "";?>">
+                                <a class="nav-link" href="./?action=accounts">Edit Accounts</a>
+                            </li>
                         <?php else : ?>
                             <li class="nav-item  <?= ($_GET['action'] == 'create') ? "active" : "";?>">
                                 <a class="nav-link" href="./?action=create">Create a Load</a>

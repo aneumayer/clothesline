@@ -36,6 +36,10 @@
             $page_title = "Rank Accounts";
             break;
 
+            case "accounts":
+            $page_title = "Edit Accounts";
+            break;
+
         /* ------ Common Pages ------ */
         case "login":
             $page_title = "Create Account / Login";

@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <?php if ($_GET["action"] != "login") : ?>
                     <ul class="navbar-nav">
-                        <?php if(isset($_SESSION['admin']) && $_SESSION["admin"] == 1) : ?>
+                        <?php if(isset($_SESSION["user"]) && $_SESSION["user"]->admin == 1) : ?>
                             <li class="nav-item  <?= ($_GET['action'] == 'track') ? "active" : "";?>">
                                 <a class="nav-link" href="./?action=track">Track Loads</a>
                             </li>
@@ -43,10 +43,20 @@
                         <?php endif; ?>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item  <?= ($_GET['action'] == 'account') ? "active" : "";?>">
-                            <a class="nav-link" href="./?action=account"><i class="fa fa-user" aria-hidden="true"></i> Account</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i> <?= $_SESSION['user']->first_name ?>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item <?= ($_GET['action'] == 'account') ? "active" : "";?> " href="./?action=account">
+                                <i class="fa fa-user" aria-hidden="true"></i> Edit Account
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="./?action=logout">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out
+                                </a>
+                            </div>
                         </li>
-                        <li><a class="nav-link" href="./?action=logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
                     </ul>
                 <?php endif; ?>
             </div>

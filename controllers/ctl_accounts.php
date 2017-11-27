@@ -1,6 +1,6 @@
-<?php 
+<?php
     # Admin check
-    if(isset($_SESSION['admin']) && !$_SESSION["admin"]) {
+    if($_SESSION["user"]->admin != 1) {
         header('Location: '.$_SERVER["PHP_SELF"].'?action=home');
     }
 

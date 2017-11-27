@@ -1,5 +1,5 @@
 <?php
-    $user = User::find('first', ['id' => $_SESSION['user_id']]);
+    $user = $_SESSION['user'];
 
     if (isset($_POST['update'])) {
         # If the create account form was submitted

@@ -1,5 +1,5 @@
 <?php
-    $user = User::find('first', ['id' => $_SESSION['user_id']]);
+    $user = $_SESSION['user'];
     # Get all the categories for this user with a position
     $categories = UserCategory::find('all', [
         'select'     => '*',

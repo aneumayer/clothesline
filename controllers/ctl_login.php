@@ -11,9 +11,7 @@
 
         if ($user instanceOf User) {
             # Start a session and set the users session variables
-            $_SESSION["logged_in"] = true;
-            $_SESSION["user_id"]   = $user->id;
-            $_SESSION["admin"]     = $user->admin;
+            $_SESSION['user']      = $user;
             header('Location: '.$_SERVER["PHP_SELF"]);
         } else {
             $error_message = "Unable to login.";
@@ -43,9 +41,7 @@
             }
 
             if ($user instanceOf User) {
-                $_SESSION["logged_in"] = true;
-                $_SESSION["user_id"]   = $user->id;
-                $_SESSION["admin"]     = $user->admin;
+                $_SESSION['user']      = $user;
                 header('Location: '.$_SERVER["PHP_SELF"]);
             } else {
                 $error_message = "Unable to create accout.";

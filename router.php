@@ -1,5 +1,5 @@
 <?php
-    if(!isset($_SESSION["logged_in"])) {
+    if(!isset($_SESSION["user"])) {
         # If the user is not logged in send them to the login page
         $_GET["action"] = "login";
     } elseif (!isset($_GET["action"]))  {

@@ -22,23 +22,35 @@
                     <ul class="navbar-nav">
                         <?php if(isset($_SESSION["user"]) && $_SESSION["user"]->admin == 1) : ?>
                             <li class="nav-item  <?= ($_GET['action'] == 'track') ? "active" : "";?>">
-                                <a class="nav-link" href="./?action=track">Track Loads</a>
+                                <a class="nav-link" href="./?action=track">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i> Track Loads
+                                </a>
                             </li>
                             <li class="nav-item  <?= ($_GET['action'] == 'details') ? "active" : "";?>">
-                                <a class="nav-link" href="./?action=details">Load Details</a>
+                                <a class="nav-link" href="./?action=details">
+                                    <i class="fa fa-info-circle" aria-hidden="true"></i> Load Details
+                                </a>
                             </li>
                             <li class="nav-item  <?= ($_GET['action'] == 'rank') ? "active" : "";?>">
-                                <a class="nav-link" href="./?action=rank">Rank Accounts</a>
+                                <a class="nav-link" href="./?action=rank">
+                                <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i> Rank Accounts
+                                </a>
                             </li>
                             <li class="nav-item  <?= ($_GET['action'] == 'accounts') ? "active" : "";?>">
-                                <a class="nav-link" href="./?action=accounts">Edit Accounts</a>
+                                <a class="nav-link" href="./?action=accounts">
+                                    <i class="fa fa-users" aria-hidden="true"></i> Edit Accounts
+                                </a>
                             </li>
                         <?php else : ?>
                             <li class="nav-item  <?= ($_GET['action'] == 'create') ? "active" : "";?>">
-                                <a class="nav-link" href="./?action=create">Create a Load</a>
+                                <a class="nav-link" href="./?action=create">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i> Create a Load
+                                </a>
                             </li>
                             <li class="nav-item  <?= ($_GET['action'] == 'check_in') ? "active" : "";?>">
-                                <a class="nav-link" href="./?action=check_in">Check in Load</a>
+                                <a class="nav-link" href="./?action=check_in">
+                                    <i class="fa fa-check-circle" aria-hidden="true"></i> Check in Load
+                                </a>
                             </li>
                         <?php endif; ?>
                     </ul>
@@ -49,7 +61,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item <?= ($_GET['action'] == 'account') ? "active" : "";?> " href="./?action=account">
-                                <i class="fa fa-user" aria-hidden="true"></i> Edit Account
+                                    <i class="fa fa-user" aria-hidden="true"></i> Edit Account
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="./?action=logout">

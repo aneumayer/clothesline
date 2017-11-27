@@ -9,11 +9,11 @@
 <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade-in active" id="login">
         <div class="col-md-6 mx-auto">
-            <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">
+            <form method="post" action="<?= $_SERVER['REQUEST_URI'] ?>">
                 <div class="form-group row">
                     <label class="col-form-label col-md-5" for="login_email">Email Address:</label>
                     <div class="col-md-7">
-                        <input type="text" class="form-control" id="login_email" name="email" placeholder="Enter email address">
+                        <input type="text" class="form-control" id="login_email" name="email" placeholder="Enter email address" value="<?= $_POST['email'] ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -32,17 +32,17 @@
     </div>
     <div role="tabpanel" class="tab-pane fade" id="create">
         <div class="col-md-8  mx-auto">
-            <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">
+            <form method="post" action="<?= $_SERVER['REQUEST_URI'] ?>">
                 <div class="form-group row">
                     <label class="col-form-label col-md-4" for="first_name">First Name:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name" required="true" value="<?php echo($_POST['first_name']); ?>">
+                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name" required="true" value="<?= $_POST['first_name'] ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-form-label col-md-4" for="email">Email Address:</label>
                     <div class="col-md-8">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required="true" value="<?php echo($_POST['email']); ?>">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required="true" value="<?= $_POST['email'] ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -60,13 +60,13 @@
                 <div class="form-group row">
                     <label class="col-form-label col-md-4" for="street">Street Address:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="street" name="street" placeholder="Enter street address" required="true" value="<?php echo($_POST['street']); ?>">
+                        <input type="text" class="form-control" id="street" name="street" placeholder="Enter street address" required="true" value="<?= $_POST['street'] ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-form-label col-md-4" for="city">City:</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" required="true" value="<?php echo($_POST['city']); ?>">
+                        <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" required="true" value="<?= $_POST['city'] ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -85,13 +85,13 @@
                 <div class="form-group row">
                     <label class="col-form-label col-md-4" for="zip">Zip Code:</label>
                     <div class="col-md-4">
-                        <input type="zip" class="form-control" id="zip" name="zip" placeholder="Enter zip code" required="true" value="<?php echo($_POST['zip']); ?>">
+                        <input type="zip" class="form-control" id="zip" name="zip" placeholder="Enter zip code" required="true" value="<?= $_POST['zip'] ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-form-label col-md-4" for="instruction">Special Instructions:</label>
                     <div class="col-md-8">
-                        <textarea name="instructions" class="form-control"><?php echo($_POST['instructions']); ?></textarea>
+                        <textarea name="instructions" class="form-control"><?= $_POST['instructions'] ?></textarea>
                     </div>
                 </div>
                 <div class="form-group row">

@@ -5,9 +5,9 @@
 <div class="col-md-6 mx-auto">
     <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">
     <div class="form-group row">
-        <label class="col-form-label col-md-3" for="category">Category:</label>
-        <div class="col-md-6">
-            <select name="category" class="form-control" required="true">
+        <label class="col-form-label col-md-4" for="category">Category:</label>
+        <div class="col-md-8">
+            <select name="category" class="form-control" required="true" onchange="this.form.submit()">
                 <option value="">Select a Catagory</option>
                 <?php
                     foreach($categories as $cat) {
@@ -18,9 +18,6 @@
                     }
                 ?>
             </select>
-        </div>
-        <div class="col-md-3">
-            <input type="submit" name="select" value="Select" />
         </div>
     </div>
     </form>
@@ -45,12 +42,11 @@
                             <a href="#"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></a>
                         </div>
+                        <input type="hidden" name="ranking[<?= $user->id ?>]" value="<?= $user->position ?>">
                     </div>
                     <?php } ?>
             <?php endif; ?>
         </div>
-
-
         <div id="unranked_box">
             <p><strong>Unranked Users</strong></p>
             <?php if (count($unranked_users)) : ?>
@@ -68,12 +64,13 @@
                         <div class="col-md-2 text-right my-auto">
                             <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
                         </div>
+                        <input type="hidden" name="ranking[<?= $user->id ?>]" value="">
                     </div>
                 <?php } ?>
             <?php endif; ?>
         </div>
-
         <div class="text-right">
+            <input type="hidden" name="category" value="<?= $_POST['category'] ?>">
             <input type="submit" name="save" value="Save" />
         </div>
     </form>

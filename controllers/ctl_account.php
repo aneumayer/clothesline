@@ -71,20 +71,6 @@
         }
     }
 
-    if (isset($_POST['reset'])) {
-        $current = $user->password;
-        if ($_POST['password'] == $_POST['password2']) {
-            $user->password = md5($_POST['password']);
-            if ($user->save()) {
-                $success_message = 'Password updated.';
-            } else {
-                $error_message = 'Unable to update accout.';
-            }
-        } else {
-            $error_message = "Password fields did not match.";
-        }
-    }
-
     $categories = Category::find('all');
     $user_categories = UserCategory::find('all', ['conditions' => ['user_id = ?', $user->id]]);
 

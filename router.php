@@ -11,27 +11,15 @@
     # For each action include the corresponding model and controller
     switch($_GET["action"]){
         /* ------ General Pages ------ */
-        case "account":
-            $page_title = "Account";
+        case "profile":
+            $page_title = "View Profile";
             break;
 
-        case "create":
-            $page_title = "Create a Load";
-            break;
-
-        case "check_in":
-            $page_title = "Check In Load";
+        case "address":
+            $page_title = "Next Address";
             break;
 
         /* ------ Admin Pages ------ */
-        case "track":
-            $page_title = "Track Loads";
-            break;
-
-        case "details":
-            $page_title = "Load Details";
-            break;
-
         case "rank":
             $page_title = "Rank Accounts";
             break;
@@ -42,7 +30,7 @@
 
         /* ------ Common Pages ------ */
         case "login":
-            $page_title = "Create Account / Login";
+            $page_title = "";
             break;
 
         case "logout":

@@ -1,5 +1,5 @@
 <header class="text-center">
-    <h1><?= (strlen($page_title)) ? $page_title : "Home" ?></h1>
+    <h1><?= $page_title  ?></h1>
 </header>
 <?php if (count($categories)) : ?>
 <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">

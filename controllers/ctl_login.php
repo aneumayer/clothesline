@@ -3,9 +3,8 @@
         # If the login form was submitted
         $user = User::find('first', [
             'conditions' => [
-                'email = ? and password = ?',
-                $_POST["email"],
-                md5($_POST["password"])
+                'email = ?',
+                $_POST["email"]
             ]
         ]);
 
@@ -18,37 +17,31 @@
         }
 
     } elseif (isset($_POST["create"])) {
-        if ($_POST['password'] == $_POST['password2']) {
-            $user = new User([
-                'first_name'   => $_POST['first_name'],
-                'email'        => $_POST['email'],
-                'password'     => md5($_POST['password']),
-                'street'       => $_POST['street'],
-                'city'         => $_POST['city'],
-                'state'        => $_POST['state'],
-                'zip'          => $_POST['zip'],
-                'instructions' => $_POST['instructions'],
+        $user = new User([
+            'first_name'   => $_POST['first_name'],
+            'email'        => $_POST['email'],
+            'street'       => $_POST['street'],
+            'city'         => $_POST['city'],
+            'state'        => $_POST['state'],
+            'zip'          => $_POST['zip'],
+            'instructions' => $_POST['instructions'],
+        ]);
+        $user->save();
+
+        # Save the user categories
+        foreach ($_POST['categories'] as $cat_id) {
+            $user_category = new UserCategory([
+                'user_id'     => $user->id,
+                'category_id' => $cat_id
             ]);
-            $user->save();
+            $user_category->save();
+        }
 
-            # Save the user categories
-            foreach ($_POST['categories'] as $cat_id) {
-                $user_category = new UserCategory([
-                    'user_id'     => $user->id,
-                    'category_id' => $cat_id
-                ]);
-                $user_category->save();
-            }
-
-            if ($user instanceOf User) {
-                $_SESSION['user']      = $user;
-                header('Location: '.$_SERVER["PHP_SELF"]);
-            } else {
-                $error_message = "Unable to create accout.";
-            }
-
+        if ($user instanceOf User) {
+            $_SESSION['user']      = $user;
+            header('Location: '.$_SERVER["PHP_SELF"]);
         } else {
-            $error_message = "Password fields did not match.";
+            $error_message = "Unable to create accout.";
         }
 
     }

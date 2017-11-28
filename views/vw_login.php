@@ -13,13 +13,7 @@
                 <div class="form-group row">
                     <label class="col-form-label col-md-5" for="login_email">Email Address:</label>
                     <div class="col-md-7">
-                        <input type="text" class="form-control" id="login_email" name="email" placeholder="Enter email address" value="<?= $_POST['email'] ?>">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-form-label col-md-5" for="login_password">Password:</label>
-                    <div class="col-md-7">
-                        <input type="password" class="form-control" id="login_passsword" name="password" placeholder="Enter password">
+                        <input type="email" class="form-control" id="login_email" name="email" placeholder="Enter email address" value="<?= $_POST['email'] ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -43,18 +37,6 @@
                     <label class="col-form-label col-md-4" for="email">Email Address:</label>
                     <div class="col-md-8">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required="true" value="<?= $_POST['email'] ?>">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-form-label col-md-4" for="password">Password:</label>
-                    <div class="col-md-8">
-                        <input type="password" class="form-control" id="password" name="password" required="true" placeholder="Enter password">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-form-label col-md-4" for="password2">Confirm Password:</label>
-                    <div class="col-md-8">
-                        <input type="password" class="form-control" id="password2" name="password2" required="true" placeholder="Enter password">
                     </div>
                 </div>
                 <div class="form-group row">

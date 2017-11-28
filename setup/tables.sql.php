@@ -18,14 +18,13 @@ CREATE TABLE user (
     state CHAR(2),
     zip CHAR(5),
     instructions varchar(1000),
-    password VARCHAR(50) NOT NULL,
     admin INTEGER(1) DEFAULT 0 NOT NULL,
     created_at DATETIME NOT NULL,
     updated_at DATETIME NOT NULL,
     INDEX (email)
 );
 
-INSERT INTO user (first_name, email, password, admin, created_at, updated_at) VALUES ('Admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1', NOW(), NOW());
+INSERT INTO user (first_name, email, admin, created_at, updated_at) VALUES ('Admin', 'admin@clothesline.org', '1', NOW(), NOW());
 
 CREATE TABLE category (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -36,13 +35,6 @@ CREATE TABLE category (
  INSERT INTO category (name) VALUES('Men');
  INSERT INTO category (name) VALUES('Children');
 
-CREATE TABLE package (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    current_status CHAR(1),
-    created_at DATETIME NOT NULL,
-    updated_at DATETIME NOT NULL
-);
-
 CREATE TABLE user_category (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     user_id INTEGER NOT NULL,
@@ -51,27 +43,6 @@ CREATE TABLE user_category (
     created_at DATETIME NOT NULL,
     updated_at DATETIME NOT NULL,
     FOREIGN KEY (user_id) REFERENCES user (id),
-    FOREIGN KEY (category_id) REFERENCES category (id)
-);
-
-CREATE TABLE user_package (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    user_id INTEGER NOT NULL,
-    package_id INTEGER NOT NULL,
-    received INTEGER,
-    created_at DATETIME NOT NULL,
-    updated_at DATETIME NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES user (id),
-    FOREIGN KEY (package_id) REFERENCES package (id)
-);
-
-CREATE TABLE package_category (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    package_id INTEGER NOT NULL,
-    category_id INTEGER NOT NULL,
-    created_at DATETIME NOT NULL,
-    updated_at DATETIME NOT NULL,
-    FOREIGN KEY (package_id) REFERENCES package (id),
     FOREIGN KEY (category_id) REFERENCES category (id)
 );
 

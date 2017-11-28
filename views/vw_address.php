@@ -5,9 +5,10 @@
 <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">
     <div class="col-md-6 mx-auto">
         <div class="form-group row">
-            <label class="col-form-label col-md-4" for="category">Category:</label>
-            <div class="col-md-4">
+            <label class="col-form-label col-md-3" for="category">Category:</label>
+            <div class="col-md-6">
                 <select name="category" class="form-control" required="true">
+                    <option value="">Select a Catagory</option>
                     <?php
                         foreach($categories as $cat) {
                             $selected = ($cat->id == $_POST['category']) ? "selected" : "";
@@ -18,7 +19,7 @@
                     ?>
                 </select>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <input type="submit" name="create" value="Create" />
             </div>
         </div>

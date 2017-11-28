@@ -10,8 +10,9 @@
                 <select name="category" class="form-control" required="true">
                     <?php
                         foreach($categories as $cat) {
+                            $selected = ($cat->id == $_POST['category']) ? "selected" : "";
                             if($cat instanceOf UserCategory) {
-                                echo("<option value=\"{$cat->category_id}\">{$cat->name}</option>");
+                                echo("<option $selected value=\"{$cat->category_id}\">{$cat->name}</option>");
                             }
                         }
                     ?>

@@ -28,6 +28,10 @@
             $page_title = "Edit Accounts";
             break;
 
+            case "account":
+            $page_title = "Edit Account";
+            break;
+
         /* ------ Common Pages ------ */
         case "login":
             $page_title = "";

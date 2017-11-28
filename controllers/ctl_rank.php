@@ -1,6 +1,6 @@
 <?php
     # Admin check
-    if($_SESSION["user"]->admin != 1) {
+    if ($_SESSION["user"]->admin != 1) {
         header('Location: '.$_SERVER["PHP_SELF"].'?action=home');
     }
 
@@ -8,7 +8,7 @@
 
     $ranked_users = [];
     $unranked_users = [];
-    if(isset($_POST['category'])) {
+    if (isset($_POST['category'])) {
         $ranked_users = User::find('all', [
             'select'     => '*',
             'conditions' => ['category_id = ? AND position IS NOT NULL', $_POST['category']],

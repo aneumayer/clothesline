@@ -28,7 +28,7 @@
             <p><strong>Ranked Users</strong></p>
             <?php if (count($ranked_users)) : ?>
                 <?php foreach($ranked_users as $user) { ?>
-                    <div class="row border border-primary rounded">
+                    <div class="row border border-primary rounded rank-block">
                         <div class="col-md-2 my-atuo">
                             <?= $user->first_name ?>
                         </div>
@@ -39,8 +39,14 @@
                             <?= $user->street ?><br><?= $user->city ?>, <?= $user->state ?><?= $user->zip ?>
                         </div>
                         <div class="col-md-2 text-right my-auto">
-                            <a href="#"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></a>
+                            <div class="rank-move-1 invisible">
+                                <a href="#" class="rank-add"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="rank-move-2 visible">
+                                <a href="#" class="rank-up"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+                                <a href="#" class="rank-down"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></a>
+                                <a href="#" class="rank-remove"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+                            </div>
                         </div>
                         <input type="hidden" name="ranking[<?= $user->id ?>]" value="<?= $user->position ?>">
                     </div>
@@ -51,7 +57,7 @@
             <p><strong>Unranked Users</strong></p>
             <?php if (count($unranked_users)) : ?>
                 <?php foreach($unranked_users as $user) { ?>
-                    <div class="row border border-primary rounded">
+                    <div class="row border border-primary rounded rank-block">
                         <div class="col-md-2 my-auto">
                             <?= $user->first_name ?>
                         </div>
@@ -62,7 +68,13 @@
                             <?= $user->street ?><br><?= $user->city ?>, <?= $user->state ?><?= $user->zip ?>
                         </div>
                         <div class="col-md-2 text-right my-auto">
-                            <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                             <div class="rank-move-1 visible">
+                                <a href="#" class="rank-add"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="rank-move-2 invisible">
+                                <a href="#" class="rank-up"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+                                <a href="#" class="rank-down"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></a>
+                            </div>
                         </div>
                         <input type="hidden" name="ranking[<?= $user->id ?>]" value="">
                     </div>

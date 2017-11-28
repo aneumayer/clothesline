@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/main.css">
         <script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-toggleable-md navbar-inverse navbar-fixed-top">

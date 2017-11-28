@@ -27,8 +27,8 @@
 </div>
 <div class="col-md-8 mx-auto">
     <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">
-        <p class="h3">Ranked Users</p>
         <div id="ranked_box">
+            <p><strong>Ranked Users</strong></p>
             <?php if (count($ranked_users)) : ?>
                 <?php foreach($ranked_users as $user) { ?>
                     <div class="row border border-primary rounded">
@@ -50,8 +50,9 @@
             <?php endif; ?>
         </div>
 
-        <p class="h3">Unranked Users</p>
+
         <div id="unranked_box">
+            <p><strong>Unranked Users</strong></p>
             <?php if (count($unranked_users)) : ?>
                 <?php foreach($unranked_users as $user) { ?>
                     <div class="row border border-primary rounded">

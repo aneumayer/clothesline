@@ -17,3 +17,9 @@ header {
 h1, .nav-link {
     color: #2d9214;
 }
+
+.border-primary {
+    border: 1px solid #024872;
+    background-color: #eee;
+    margin-bottom: -1px;
+}

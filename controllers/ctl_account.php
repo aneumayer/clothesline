@@ -1,5 +1,5 @@
 <?php
-    # Admin check
+    // Admin check
     if ($_SESSION["user"]->admin != 1) {
         header('Location: '.$_SERVER["PHP_SELF"].'?action=home');
     }
@@ -14,7 +14,7 @@
     }
 
     if (isset($_POST['update'])) {
-        # If the create account form was submitted
+        // If the create account form was submitted
         $user->first_name   = $_POST['first_name'];
         $user->email        = strtolower($_POST['email']);
         $user->street       = $_POST['street'];
@@ -25,7 +25,7 @@
 
         $post_categories = (isset($_POST['categories'])) ? $_POST['categories'] : [];
 
-        # Remove unchecked categories
+        // Remove unchecked categories
         if (isset($_POST['categories'])) {
             $removed = UserCategory::find('all', [
                 'conditions' => [
@@ -35,16 +35,16 @@
                 ]
             ]);
 
-             # Add new categories
+             // Add new categories
             foreach ($_POST['categories'] as $category_id) {
-                # Get the user's category if it already exists
+                // Get the user's category if it already exists
                 $user_category = UserCategory::find('first', [
                     'conditions' => [
                         'user_id = ? and category_id = ?',
                         $user->id,
                         $category_id
                 ]]);
-                # If there is no entry add it
+                // If there is no entry add it
                 if (!($user_category instanceOf UserCategory)) {
                     $user_category = new UserCategory([
                         'user_id'     => $user->id,

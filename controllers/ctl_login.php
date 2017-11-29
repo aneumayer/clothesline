@@ -1,12 +1,12 @@
 <?php
     if (isset($_POST["login"])){
-        # If the login form was submitted
+        // If the login form was submitted
         $user = User::find('first', [
             'conditions' => ['email = ?', strtolower($_POST["email"])]
         ]);
 
         if ($user instanceOf User) {
-            # Start a session and set the users session variables
+            // Start a session and set the users session variables
             $_SESSION['user']      = $user;
             header('Location: '.$_SERVER["PHP_SELF"]);
         } else {
@@ -42,7 +42,7 @@
             ]);
             $user->save();
 
-            # Save the user categories
+            // Save the user categories
             foreach ($_POST['categories'] as $cat_id) {
                 $user_category = new UserCategory([
                     'user_id'     => $user->id,
@@ -52,6 +52,9 @@
             }
 
             if ($user instanceOf User) {
+                // Send an email to
+
+
                 $_SESSION['user']      = $user;
                 header('Location: '.$_SERVER["PHP_SELF"]);
             } else {
@@ -60,7 +63,7 @@
         }
     }
 
-    # Get the list of categories to chose from
+    // Get the list of categories to chose from
     $categories = Category::find('all');
 
 ?>

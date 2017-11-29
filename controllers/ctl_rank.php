@@ -1,5 +1,5 @@
 <?php
-    # Admin check
+    // Admin check
     if ($_SESSION["user"]->admin != 1) {
         header('Location: '.$_SERVER["PHP_SELF"].'?action=home');
     }
@@ -7,14 +7,14 @@
     $categories = Category::find('all');
 
     if (isset($_POST['save'])) {
-        # Get all the existing users
+        // Get all the existing users
         $category_users = UserCategory::find_all_by_category_id($_POST['category']);
-        # Clear all the existing positions
+        // Clear all the existing positions
         foreach ($category_users as $cat_user) {
             $cat_user->position = 0;
             $cat_user->save();
         }
-        # Add the new users to the category
+        // Add the new users to the category
         $position = 1;
         foreach ($_POST['ranked'] as $user_id) {
             if ($user_id > 0) {

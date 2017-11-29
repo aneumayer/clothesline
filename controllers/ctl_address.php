@@ -1,6 +1,6 @@
 <?php
     $user = $_SESSION['user'];
-    # Get all the categories for this user with a position
+    // Get all the categories for this user with a position
     $categories = UserCategory::find('all', [
         'select'     => '*',
         'conditions' => ['user_id = ? AND position > 0', $user->id],

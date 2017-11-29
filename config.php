@@ -2,7 +2,7 @@
 
 $config = [
     'email' => [
-        'status' => 'On',
+        'status' => 'Off',
         'to'     => 'test@email.com',
         'from'   => 'test@email.com'
     ],

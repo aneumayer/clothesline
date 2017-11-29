@@ -25,3 +25,9 @@ h1 {
 .act-btn {
     font-size: 1.5em;
 }
+.rank-add > i {
+    color: #5cb85c;
+}
+.rank-remove > i {
+    color: #d9534f;
+}

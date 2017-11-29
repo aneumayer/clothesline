@@ -40,7 +40,7 @@
     <div class="col-md-12 text-center mt-5">
         <p>The next address for <strong><?= $category_name ?></strong> is:</p>
         <p>
-            <a href="https://www.google.ca/maps/place/<?= urlencode("$next_user->street, $next_user->city, $next_user->state $next_user->zip") ?>/" target="_blank">
+            <a href="https://www.google.com/maps/?q=<?= urlencode("$next_user->street, $next_user->city, $next_user->state $next_user->zip") ?>/" target="_blank">
                 <?= $next_user->street ?><br><?= $next_user->city ?>, <?= $next_user->state ?> <?= $next_user->zip ?>
             </a>
         </p>

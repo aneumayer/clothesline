@@ -36,7 +36,9 @@
                             <?= $user->email ?>
                         </div>
                         <div class="col-md-4 my-auto">
-                            <?= $user->street ?><br><?= $user->city ?>, <?= $user->state ?><?= $user->zip ?>
+                            <a href="https://www.google.com/maps/?q=<?= urlencode("$user->street, $user->city, $user->state $user->zip") ?>/" target="_blank">
+                                <?= $user->street ?><br><?= $user->city ?>, <?= $user->state ?><?= $user->zip ?>
+                            </a>
                         </div>
                         <div class="col-md-2 text-right my-auto">
                             <div class="rank-move-1 d-none">
@@ -65,7 +67,9 @@
                             <?= $user->email ?>
                         </div>
                         <div class="col-md-4 my-auto">
-                            <?= $user->street ?><br><?= $user->city ?>, <?= $user->state ?><?= $user->zip ?>
+                            <a href="https://www.google.com/maps/?q=<?= urlencode("$user->street, $user->city, $user->state $user->zip") ?>/" target="_blank">
+                                <?= $user->street ?><br><?= $user->city ?>, <?= $user->state ?><?= $user->zip ?>
+                            </a>
                         </div>
                         <div class="col-md-2 text-right my-auto">
                              <div class="rank-move-1">

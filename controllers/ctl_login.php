@@ -1,35 +1,35 @@
 <?php
-    if (isset($_POST["login"])){
+    if (isset($_POST['login'])){
         // If the login form was submitted
         $user = User::find('first', [
-            'conditions' => ['email = ?', strtolower($_POST["email"])]
+            'conditions' => ['email = ?', strtolower($_POST['email'])]
         ]);
 
         if ($user instanceOf User) {
             // Start a session and set the users session variables
             $_SESSION['user']      = $user;
-            header('Location: '.$_SERVER["PHP_SELF"]);
+            header('Location: '.$_SERVER['PHP_SELF']);
         } else {
-            $error_message = "Unable to login.";
+            $error_message = 'Unable to login.';
         }
 
-    } elseif (isset($_POST["create"])) {
+    } elseif (isset($_POST['create'])) {
         $email = strtolower($_POST['email']);
         $user_check = User::find_by_email($email);
         if ($user_check instanceOf User) {
-            $error_message = "Email address already in use.";
+            $error_message = 'Email address already in use.';
         } elseif (!(isset($_POST['first_name']) || $_POST['first_name'] == '')) {
-            $error_message = "Missing first name.";
+            $error_message = 'Missing first name.';
         } elseif (!(isset($_POST['email']) || $_POST['email'] == '')) {
-            $error_message = "Missing email address.";
+            $error_message = 'Missing email address.';
         } elseif (!(isset($_POST['street']) || $_POST['street'] == '')) {
-            $error_message = "Missing street.";
+            $error_message = 'Missing street.';
         } elseif (!(isset($_POST['city']) || $_POST['city'] == '')) {
-            $error_message = "Missing city.";
+            $error_message = 'Missing city.';
         } elseif (!(isset($_POST['state']) || $_POST['state'] == '')) {
-            $error_message = "Missing state.";
+            $error_message = 'Missing state.';
         } elseif (!(isset($_POST['zip']) || $_POST['zip'] == '')) {
-            $error_message = "Missing zip code.";
+            $error_message = 'Missing zip code.';
         } else {
             $user = new User([
                 'first_name'   => $_POST['first_name'],
@@ -53,12 +53,18 @@
 
             if ($user instanceOf User) {
                 // Send an email to
-
+                /*$to      = $config['email']['to'];
+                $subject = 'New ' . $config['app']['title'] . ' Account';
+                $message = "New account created for $user->first_name ($user->email) at $user->street, $user->city, $user->state $user->zip.";
+                $headers = 'From: ' . $config['app']['from'] . "\r\n" .
+                    'Reply-To: ' . $config['app']['from'] . "\r\n" .
+                    'X-Mailer: PHP/' . phpversion();
+                mail($to, $subject, $message, $headers);*/
 
                 $_SESSION['user']      = $user;
-                header('Location: '.$_SERVER["PHP_SELF"]);
+                header('Location: '.$_SERVER['PHP_SELF']);
             } else {
-                $error_message = "Unable to create accout.";
+                $error_message = 'Unable to create accout.';
             }
         }
     }

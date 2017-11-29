@@ -71,6 +71,19 @@
         }
     }
 
+    if (isset($_POST['delete'])) {
+        $cats = UserCategory::find('all', [
+            'conditions' => ['user_id = ?', $user->id]
+        ]);
+        foreach($cats as $user_cat) {
+            if ($user_cat instanceOf UserCategory) {
+                $user_cat->delete();
+            }
+        }
+        $user->delete();
+        header('Location: '.$_SERVER['PHP_SELF'].'?action=accounts');
+    }
+
     $categories = Category::find('all');
     $user_categories = UserCategory::find('all', ['conditions' => ['user_id = ?', $user->id]]);
 

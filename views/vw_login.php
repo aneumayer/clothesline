@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-12 text-right">
-                        <input type="submit" name="login" value="Log In" />
+                        <input type="submit" class="btn btn-primary" name="login" value="Log In" />
                     </div>
                 </div>
             </form>
@@ -128,7 +128,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-12 text-right">
-                        <input type="submit" name="create" value="Sign Up" />
+                        <input type="submit" class="btn btn-success" name="create" value="Sign Up" />
                     </div>
                 </div>
             </form>

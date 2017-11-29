@@ -84,7 +84,7 @@
         </div>
         <div class="mt-4 text-right">
             <input type="hidden" name="category" value="<?= $_POST['category'] ?>">
-            <input type="submit" name="save" value="Save" />
+            <input type="submit" class="btn btn-success" name="save" value="Save" />
         </div>
     </form>
 </div>

@@ -72,7 +72,8 @@
         </div>
         <div class="form-group row">
             <div class="col-md-12 text-right">
-                <input type="submit" class="float-md-right" name="update" value="Save" />
+                <input type="submit" class="btn btn-danger" id="delete_btn" name="delete" value="Delete" />
+                <input type="submit" class="btn btn-success" name="update" value="Save" />
             </div>
         </div>
     </form>

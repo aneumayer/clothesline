@@ -44,3 +44,9 @@ $('.rank-remove').click(function(event) {
     $(rank).attr('name', 'unranked[]');
     $(box).removeClass('rank-block').addClass('unrank-block').appendTo(bot);
 });
+$('#delete_btn').click(function(event) {
+    var answer = confirm('Are you sure you want to delete this account?');
+    if(!answer){
+        event.preventDefault();
+    }
+});

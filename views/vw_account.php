@@ -30,7 +30,15 @@
         <div class="form-group row">
             <label class="col-form-label col-md-4" for="state">State:</label>
             <div class="col-md-8">
-                <input type="text" class="form-control" id="state" name="state" placeholder="Enter state" value="<?= $config["states"][$user->state] ?>">
+                <select name="state" class="form-control" required="true">
+                    <?php
+                    echo($user->state);
+                        foreach($config["states"] as $abbrev => $state) {
+                            $selected = ($user->state == $abbrev) ? 'selected' : '';
+                            echo("<option value=\"{$abbrev}\" $selected>{$state}</option>");
+                        }
+                    ?>
+                </select>
             </div>
         </div>
         <div class="form-group row">
@@ -64,7 +72,7 @@
         </div>
         <div class="form-group row">
             <div class="col-md-12 text-right">
-                <input type="submit" class="float-md-right" name="update" value="Update" />
+                <input type="submit" class="float-md-right" name="update" value="Save" />
             </div>
         </div>
     </form>

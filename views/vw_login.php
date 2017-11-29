@@ -1,9 +1,9 @@
 <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 40px;">
     <li class="nav-item">
-        <a class="nav-link active" href="#login" role="tab" data-toggle="tab">Login</a>
+        <a class="nav-link active" href="#login" role="tab" data-toggle="tab">Login In</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#create" role="tab" data-toggle="tab">Create Account</a>
+        <a class="nav-link" href="#create" role="tab" data-toggle="tab">Sign Up</a>
     </li>
 </ul>
 <div class="tab-content">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-12 text-right">
-                        <input type="submit" name="login" value="Login" />
+                        <input type="submit" name="login" value="Log In" />
                     </div>
                 </div>
             </form>
@@ -128,7 +128,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-12 text-right">
-                        <input type="submit" name="create" value="Create" />
+                        <input type="submit" name="create" value="Sign Up" />
                     </div>
                 </div>
             </form>

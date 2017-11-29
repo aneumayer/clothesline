@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-md-4 my-auto">
                     <?php if ($user->street) : ?>
-                        <?= $user->street ?><br><?= $user->city ?>, <?= $user->state ?><?= $user->zip ?>
+                        <?= $user->street ?><br><?= $user->city ?>, <?= $user->state ?> <?= $user->zip ?>
                     <?php else : ?>
                         <br><br>
                     <?php endif; ?>

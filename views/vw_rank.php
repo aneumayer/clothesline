@@ -29,7 +29,7 @@
             <?php if (count($ranked_users)) : ?>
                 <?php foreach($ranked_users as $user) { ?>
                     <div class="form-group row border-primary rounded rank-block">
-                        <div class="col-md-2 my-atuo">
+                        <div class="col-md-2 my-auto">
                             <?= $user->first_name ?>
                         </div>
                         <div class="col-md-4 my-auto">
@@ -40,20 +40,20 @@
                         </div>
                         <div class="col-md-2 text-right my-auto">
                             <div class="rank-move-1 d-none">
-                                <a href="#" class="rank-add"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                                <a href="#" class="rank-add"><i class="fa fa-plus-circle rank-btn" aria-hidden="true"></i></a>
                             </div>
                             <div class="rank-move-2">
-                                <a href="#" class="rank-up"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
-                                <a href="#" class="rank-down"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></a>
-                                <a href="#" class="rank-remove"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+                                <a href="#" class="rank-up"><i class="fa fa-arrow-circle-up rank-btn" aria-hidden="true"></i></a>
+                                <a href="#" class="rank-down"><i class="fa fa-arrow-circle-down rank-btn" aria-hidden="true"></i></a>
+                                <a href="#" class="rank-remove"><i class="fa fa-minus-circle rank-btn" aria-hidden="true"></i></a>
                             </div>
                         </div>
-                        <input type="hidden" class="rank-val" name="ranked[]" value="<?= $user->id ?>">
+                        <input type="hidden" class="rank-val" name="ranked[]" value="<?= $user->user_id ?>">
                     </div>
                     <?php } ?>
             <?php endif; ?>
         </div>
-        <div id="unranked_box">
+        <div id="unranked_box" class="mt-3">
             <p><strong>Unranked Users</strong></p>
             <?php if (count($unranked_users)) : ?>
                 <?php foreach($unranked_users as $user) { ?>
@@ -69,15 +69,15 @@
                         </div>
                         <div class="col-md-2 text-right my-auto">
                              <div class="rank-move-1">
-                                <a href="#" class="rank-add"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                                <a href="#" class="rank-add"><i class="fa fa-plus-circle rank-btn" aria-hidden="true"></i></a>
                             </div>
                             <div class="rank-move-2 d-none">
-                                <a href="#" class="rank-up"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
-                                <a href="#" class="rank-down"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></a>
-                                <a href="#" class="rank-remove"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+                                <a href="#" class="rank-up"><i class="fa fa-arrow-circle-up rank-btn" aria-hidden="true"></i></a>
+                                <a href="#" class="rank-down"><i class="fa fa-arrow-circle-down rank-btn" aria-hidden="true"></i></a>
+                                <a href="#" class="rank-remove"><i class="fa fa-minus-circle rank-btn" aria-hidden="true"></i></a>
                             </div>
                         </div>
-                        <input type="hidden" class="rank-val" name="unranked[]" value="<?= $user->id ?>">
+                        <input type="hidden" class="rank-val" name="unranked[]" value="<?= $user->user_id ?>">
                     </div>
                 <?php } ?>
             <?php endif; ?>

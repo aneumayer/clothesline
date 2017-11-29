@@ -13,20 +13,22 @@
             'conditions' => ['category_id = ?', $_POST['category']],
             'joins'      => 'LEFT JOIN user as u ON u.id = user_category.user_id',
         ]);
-        # Delte all the users currently in the category
+        # Clear all the existing positions
         foreach ($category_users as $cat_user) {
-            $cat_user->delete();
+            $cat_user->position = null;
+            $cat_user->save();
         }
         # Add the new users to the category
         $position = 1;
         foreach ($_POST['ranked'] as $user_id) {
             if ($user_id > 0) {
-                $new_pos = UserCategory([
-                    'user_id'     => $user_id,
-                    'category_id' => $_POST['category'],
-                    'position'    => $position
+                $category_user = UserCategory::find('first', [
+                    'conditions' => ['user_id = ? AND category_id = ?', $user_id, $_POST['category']]
                 ]);
-                $new_pos->save();
+                if($category_user instanceOf UserCategory) {
+                    $category_user->position = $position;
+                    $category_user->save();
+                }
                 $position++;
             }
         }

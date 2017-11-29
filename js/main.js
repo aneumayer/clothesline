@@ -1,40 +1,46 @@
-$('.rank-add').click(function() {
+$('.rank-add').click(function(event) {
+    event.preventDefault();
     // Get all the needed objects
     var top  = $('#ranked_box');
     var box  = $(this).parent().parent().parent();
     var btn1 = $(box).find('div.rank-move-1');
     var btn2 = $(box).find('div.rank-move-2');
     var rank = $(box).find('input.rank-val');
-
+    // Perform the action
     $(btn1).addClass('d-none');
     $(btn2).removeClass('d-none');
     $(rank).attr('name', 'ranked[]');
     $(box).appendTo(top);
-
 });
-$('.rank-up').click(function() {
+$('.rank-up').click(function(event) {
+    event.preventDefault();
     var box  = $(this).parent().parent().parent();
     var prev = $(box).prev();
-    $(box).insertBefore(prev);
-
+    // Perform the action
+    if ($(prev).hasClass('rank-block')) {
+        $(box).insertBefore(prev);
+    }
 });
-$('.rank-down').click(function() {
+$('.rank-down').click(function(event) {
+    event.preventDefault();
     var box  = $(this).parent().parent().parent();
-    var prev = $(box).next();
-    $(box).insertAfter(prev);
-
+    var next = $(box).next();
+    // Perform the action
+    if ($(next).hasClass('rank-block')) {
+        $(box).insertAfter(next);
+    }
 });
-$('.rank-remove').click(function() {
-        // Get all the needed objects
-        var bot  = $('#unranked_box');
-        var box  = $(this).parent().parent().parent();
-        var btn1 = $(box).find('div.rank-move-1');
-        var btn2 = $(box).find('div.rank-move-2');
-        var rank = $(box).find('input.rank-val');
-
-        $(btn1).removeClass('d-none');
-        $(btn2).addClass('d-none');
-        $(rank).attr('name', 'unranked[]');
-        $(box).appendTo(bot);
-
+$('.rank-remove').click(function(event) {
+    event.preventDefault();
+    // Get all the needed objects
+    var bot  = $('#unranked_box');
+    var box  = $(this).parent().parent().parent();
+    var btn1 = $(box).find('div.rank-move-1');
+    var btn2 = $(box).find('div.rank-move-2');
+    var rank = $(box).find('input.rank-val');
+    // Perform the action
+    $(btn1).removeClass('d-none');
+    $(btn2).addClass('d-none');
+    $(rank).attr('name', 'unranked[]');
+    $(box).appendTo(bot);
 });

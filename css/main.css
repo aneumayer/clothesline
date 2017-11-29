@@ -13,9 +13,14 @@ h1 {
 }
 .border-primary {
     border: 1px solid #024872;
-    background-color: #eee;
     margin-bottom: -1px;
 }
-.rank-btn {
+.rank-block {
+    background-color: #efe;
+}
+.unrank-block {
+    background-color: #fee;
+}
+.act-btn {
     font-size: 1.5em;
 }

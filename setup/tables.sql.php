@@ -39,7 +39,7 @@ CREATE TABLE user_category (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     user_id INTEGER NOT NULL,
     category_id INTEGER NOT NULL,
-    position INTEGER,
+    position INTEGER NOT NULL DEFAULT 0,
     created_at DATETIME NOT NULL,
     updated_at DATETIME NOT NULL,
     FOREIGN KEY (user_id) REFERENCES user (id),

@@ -5,7 +5,8 @@
     }
 
     $users = User::find('all',[
-        'order' => 'first_name ASC, email ASC'
+        'conditions' => ['admin != 1'],
+        'order'      => 'first_name ASC, email ASC'
     ]);
 
 ?>

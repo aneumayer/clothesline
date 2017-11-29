@@ -10,7 +10,7 @@ $('.rank-add').click(function(event) {
     $(btn1).addClass('d-none');
     $(btn2).removeClass('d-none');
     $(rank).attr('name', 'ranked[]');
-    $(box).appendTo(top);
+    $(box).removeClass('unrank-block').addClass('rank-block').appendTo(top);
 });
 $('.rank-up').click(function(event) {
     event.preventDefault();
@@ -42,5 +42,5 @@ $('.rank-remove').click(function(event) {
     $(btn1).removeClass('d-none');
     $(btn2).addClass('d-none');
     $(rank).attr('name', 'unranked[]');
-    $(box).appendTo(bot);
+    $(box).removeClass('rank-block').addClass('unrank-block').appendTo(bot);
 });

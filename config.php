@@ -2,8 +2,9 @@
 
 $config = [
     'email' => [
-        'to'   => 'test@email.com',
-        'from' => 'test@email.com'
+        'status' => 'On',
+        'to'     => 'test@email.com',
+        'from'   => 'test@email.com'
     ],
     'app' => [
         'title' => 'Clothesline',

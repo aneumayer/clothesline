@@ -53,13 +53,15 @@
 
             if ($user instanceOf User) {
                 // Send an email to
-                /*$to      = $config['email']['to'];
-                $subject = 'New ' . $config['app']['title'] . ' Account';
-                $message = "New account created for $user->first_name ($user->email) at $user->street, $user->city, $user->state $user->zip.";
-                $headers = 'From: ' . $config['app']['from'] . "\r\n" .
-                    'Reply-To: ' . $config['app']['from'] . "\r\n" .
-                    'X-Mailer: PHP/' . phpversion();
-                mail($to, $subject, $message, $headers);*/
+                if ($config['email']['status'] == 'On') {
+                    $to      = $config['email']['to'];
+                    $subject = 'New ' . $config['app']['title'] . ' Account';
+                    $message = "New account created for $user->first_name ($user->email) at $user->street, $user->city, $user->state $user->zip.";
+                    $headers = 'From: ' . $config['app']['from'] . "\r\n" .
+                        'Reply-To: ' . $config['app']['from'] . "\r\n" .
+                        'X-Mailer: PHP/' . phpversion();
+                    mail($to, $subject, $message, $headers);
+                }
 
                 $_SESSION['user']      = $user;
                 header('Location: '.$_SERVER['PHP_SELF']);

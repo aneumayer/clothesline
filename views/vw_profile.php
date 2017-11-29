@@ -62,5 +62,11 @@
                 ?>
             </div>
         </div>
+        <div class="form-group row">
+            <div class="alert alert-info text-center" role="alert">
+                If you need to make changes to your account please send an email to
+                <a href="mailto:<?= $config['email']['from'] ?>?Subject=<?= $config['app']['title'] ?>%20Account%20Update" target="_blank"><?= $config['email']['from'] ?></a>.
+            </div>
+        </div>
     </form>
 </div>

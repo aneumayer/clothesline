@@ -3,7 +3,7 @@
 $config = [
     'email' => [
         'to'   => 'test@email.com',
-        'from' => 'test@email.com'
+        'from' => 'test@email.com',
     ],
     'app' => [
         'title' => 'Clothesline',

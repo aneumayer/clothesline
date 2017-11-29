@@ -11,7 +11,12 @@
                     <option value="">Select a Catagory</option>
                     <?php
                         foreach($categories as $cat) {
-                            $selected = ($cat->id == $_POST['category']) ? "selected" : "";
+                            if ($cat->id == $_POST['category']) {
+                                $selected = 'selected';
+                                $category_name = $cat->name;
+                            } else {
+                                $selected = '';
+                            }
                             if($cat instanceOf UserCategory) {
                                 echo("<option $selected value=\"{$cat->category_id}\">{$cat->name}</option>");
                             }
@@ -25,5 +30,23 @@
 <?php else : ?>
     <div class="col-md-12 text-center">
         <p>You currently have no groups that you are placed in.</p>
+    </div>
+<?php endif; ?>
+<?php if ($only) : ?>
+    <div class="col-md-12 text-center">
+        <p>You are currently the only person in this group.</p>
+    </div>
+<?php elseif ($next_user instanceOf User) : ?>
+    <div class="col-md-12 text-center mt-5">
+        <p>The next address for <strong><?= $category_name ?></strong> is:</p>
+        <p>
+            <a href="https://www.google.ca/maps/place/<?= urlencode("$next_user->street, $next_user->city, $next_user->state $next_user->zip") ?>/" target="_blank">
+                <?= $next_user->street ?><br><?= $next_user->city ?>, <?= $next_user->state ?> <?= $next_user->zip ?>
+            </a>
+        </p>
+        <?php if ($next_user->instructions) : ?>
+            <p><strong>Special Instructions:</stong></p>
+            <p><?= $next_user->instructions ?></p>
+        <?php endif; ?>
     </div>
 <?php endif; ?>

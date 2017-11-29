@@ -16,7 +16,7 @@
     if (isset($_POST['update'])) {
         # If the create account form was submitted
         $user->first_name   = $_POST['first_name'];
-        $user->email        = $_POST['email'];
+        $user->email        = strtolower($_POST['email']);
         $user->street       = $_POST['street'];
         $user->city         = $_POST['city'];
         $user->state        = $_POST['state'];

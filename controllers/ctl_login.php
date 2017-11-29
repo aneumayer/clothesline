@@ -2,10 +2,7 @@
     if (isset($_POST["login"])){
         # If the login form was submitted
         $user = User::find('first', [
-            'conditions' => [
-                'email = ?',
-                $_POST["email"]
-            ]
+            'conditions' => ['email = ?', strtolower($_POST["email"])]
         ]);
 
         if ($user instanceOf User) {
@@ -17,7 +14,8 @@
         }
 
     } elseif (isset($_POST["create"])) {
-        $user_check = User::find_by_email($_POST['email']);
+        $email = strtolower($_POST['email']);
+        $user_check = User::find_by_email($email);
         if ($user_check instanceOf User) {
             $error_message = "Email address already in use.";
         } elseif (!(isset($_POST['first_name']) || $_POST['first_name'] == '')) {
@@ -35,7 +33,7 @@
         } else {
             $user = new User([
                 'first_name'   => $_POST['first_name'],
-                'email'        => $_POST['email'],
+                'email'        => $email,
                 'street'       => $_POST['street'],
                 'city'         => $_POST['city'],
                 'state'        => $_POST['state'],

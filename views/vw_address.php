@@ -45,7 +45,7 @@
             </a>
         </p>
         <?php if ($next_user->instructions) : ?>
-            <p><strong>Special Instructions:</stong></p>
+            <p><strong>Special Instructions:</strong></p>
             <p><?= $next_user->instructions ?></p>
         <?php endif; ?>
     </div>

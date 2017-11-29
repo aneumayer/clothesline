@@ -52,7 +52,6 @@
             }
 
             if ($user instanceOf User) {
-                // Send an email to
                 if ($config['email']['status'] == 'On') {
                     $to      = $config['email']['to'];
                     $subject = 'New ' . $config['app']['title'] . ' Account';
@@ -62,7 +61,6 @@
                         'X-Mailer: PHP/' . phpversion();
                     mail($to, $subject, $message, $headers);
                 }
-
                 $_SESSION['user']      = $user;
                 header('Location: '.$_SERVER['PHP_SELF']);
             } else {

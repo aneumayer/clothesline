@@ -22,6 +22,7 @@
         $user->state        = $_POST['state'];
         $user->zip          = $_POST['zip'];
         $user->instructions = $_POST['instructions'];
+        $user->notes        = $_POST['notes'];
 
         $post_categories = (isset($_POST['categories'])) ? $_POST['categories'] : [];
 

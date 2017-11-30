@@ -4,7 +4,7 @@
 <div class="col-md-8 mx-auto">
     <?php if (count($users)) : ?>
         <?php foreach($users as $user) { ?>
-            <div class="form-group row border-primary rounded">
+            <div class="form-group row border-primary rounded" <?= ($user->notes) ? 'title="'.$user->notes.'"' : '' ?>>
                 <div class="col-md-2 my-auto">
                     <?= $user->first_name ?>
                 </div>

@@ -54,6 +54,12 @@
             </div>
         </div>
         <div class="form-group row">
+            <label class="col-form-label col-md-4" for="notes">Notes:</label>
+            <div class="col-md-8">
+                <textarea name="notes" class="form-control"><?= $user->notes ?></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
             <label class="col-form-label col-md-4" for="categories">Categories:</label>
             <div class="col-md-8">
                 <?php

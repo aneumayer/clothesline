@@ -93,12 +93,6 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-form-label col-md-4" for="created">Last Log In:</label>
-            <div class="col-md-8">
-                <input type="text" class="form-control" id="subscription" name="subscription" readonly value="<?= (isset($user->last_login) && $user->last_login) ? $user->last_login->format('m/d/Y - g:i A') : "None" ?>">
-            </div>
-        </div>
-        <div class="form-group row">
             <label class="col-form-label col-md-4" for="created">Last Update:</label>
             <div class="col-md-8">
                 <input type="text" class="form-control" id="subscription" name="subscription" readonly value="<?= $user->updated_at->format('m/d/Y - g:i A'); ?>">

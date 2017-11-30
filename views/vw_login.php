@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 40px;">
     <li class="nav-item">
-        <a class="nav-link active" href="#login" role="tab" data-toggle="tab">Login In</a>
+        <a class="nav-link active" href="#login" role="tab" data-toggle="tab">Log In</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#create" role="tab" data-toggle="tab">Sign Up</a>

@@ -8,7 +8,9 @@
         if ($user instanceOf User) {
             // Start a session and set the users session variables
             $_SESSION['user']  = $user;
+            // Set the last login but leave updated alone
             $user->last_login  = date(DATE_RFC822);
+            $user->updated_at  = $user->updated_at;
             $user->save();
             header('Location: '.$_SERVER['PHP_SELF']);
         } else {

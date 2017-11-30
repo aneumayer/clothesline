@@ -31,3 +31,7 @@ h1 {
 .rank-remove > i {
     color: #d9534f;
 }
+.row-header {
+    font-weight: bold;
+    background-color: #ccc;
+}

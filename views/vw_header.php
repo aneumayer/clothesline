@@ -22,7 +22,7 @@
                         <?php if(isset($_SESSION["user"]) && $_SESSION["user"]->admin == 1) : ?>
                             <li class="nav-item  <?= ($_GET['action'] == 'rank') ? "active" : "";?>">
                                 <a class="nav-link" href="./?action=rank">
-                                <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i> Rank Accounts
+                                    <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i> Rank Accounts
                                 </a>
                             </li>
                             <li class="nav-item  <?= ($_GET['action'] == 'accounts') ? "active" : "";?>">

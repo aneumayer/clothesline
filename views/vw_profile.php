@@ -56,7 +56,8 @@
                     foreach($categories as $category) {
                         $checked = in_array($category->id, $uc) ? "checked=\"checked\"" : "";
                         echo("<div class=\"form-check\"><label class=\"form-check-label\">");
-                        echo("<input type=\"checkbox\" class=\"form-check-input\" disabled name=\"categories[]\" value=\"{$category->id}\" $checked> {$category->name}");
+                        echo("<input type=\"checkbox\" class=\"form-check-input\" disabled name=\"categories[]\" value=\"{$category->id}\" $checked>");
+                        echo("<i class=\"fa fa-{$category->icon}\" aria-hidden=\"true\"></i> {$category->name}");
                         echo("</label></div>");
                     }
                 ?>

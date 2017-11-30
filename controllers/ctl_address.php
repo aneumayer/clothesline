@@ -11,12 +11,12 @@
     $only      = false;
     $next_user = false;
 
-    if (isset($_POST['category'])) {
+    if (isset($_GET['category'])) {
         // Get the next address for this category
         $me = UserCategory::find('first', [
             'conditions' => [
                 'user_id = ? AND category_id = ?',
-                $user->id, $_POST['category']
+                $user->id, $_GET['category']
             ]
         ]);
         $my_pos = $me->position;
@@ -24,7 +24,7 @@
         $next = UserCategory::find('first', [
             'conditions' => [
                 'category_id = ? AND position > ?',
-                $_POST['category'], $my_pos
+                $_GET['category'], $my_pos
             ]
         ]);
 
@@ -35,7 +35,7 @@
                 $next = UserCategory::find('first', [
                     'conditions' => [
                         'category_id = ? AND position = 1',
-                        $_POST['category']
+                        $_GET['category']
                     ]
                 ]);
                 $next_user = User::find_by_id($next->user_id);

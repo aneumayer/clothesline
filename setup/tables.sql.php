@@ -29,12 +29,13 @@ INSERT INTO user (first_name, email, admin, created_at, updated_at) VALUES ('Adm
 
 CREATE TABLE category (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(150)
+    name VARCHAR(150),
+    icon VARCHAR(50)
 );
 
- INSERT INTO category (name) VALUES('Women');
- INSERT INTO category (name) VALUES('Men');
- INSERT INTO category (name) VALUES('Children');
+ INSERT INTO category (name, icon) VALUES('Women', 'female');
+ INSERT INTO category (name, icon) VALUES('Men', 'male');
+ INSERT INTO category (name, icon) VALUES('Children', 'child');
 
 CREATE TABLE user_category (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,

@@ -1,3 +1,6 @@
+<div class="col-md-12 text-center mb-4">
+    <img src="img/logo.jpg" class="img-fluid col-md-7" alt="Responsive image">
+</div>
 <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 40px;">
     <li class="nav-item">
         <a class="nav-link active" href="#login" role="tab" data-toggle="tab">Log In</a>

@@ -8,7 +8,7 @@
         if ($user instanceOf User) {
             // Start a session and set the users session variables
             $_SESSION['user']  = $user;
-            $user->last_login  = 'Now()';
+            $user->last_login  = date(DATE_RFC822);
             $user->save();
             header('Location: '.$_SERVER['PHP_SELF']);
         } else {
@@ -42,7 +42,7 @@
                 'zip'          => $_POST['zip'],
                 'instructions' => $_POST['instructions'],
                 'subscription' => $_POST['subscription'],
-                'last_login'   => 'Now()'
+                'last_login'   => date(DATE_RFC822)
             ]);
             $user->save();
 

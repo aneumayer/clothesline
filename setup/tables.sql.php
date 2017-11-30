@@ -21,6 +21,7 @@ CREATE TABLE user (
     notes VARCHAR(2000),
     subscription INTEGER(1) DEFAULT 0 NOT NULL,
     admin INTEGER(1) DEFAULT 0 NOT NULL,
+    last_login TIMESTAMP NOT NULL,
     created_at DATETIME NOT NULL,
     updated_at DATETIME NOT NULL,
     INDEX (email)

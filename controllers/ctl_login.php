@@ -7,7 +7,9 @@
 
         if ($user instanceOf User) {
             // Start a session and set the users session variables
-            $_SESSION['user']      = $user;
+            $_SESSION['user']  = $user;
+            $user->last_login  = 'Now()';
+            $user->save();
             header('Location: '.$_SERVER['PHP_SELF']);
         } else {
             $error_message = 'Unable to login.';
@@ -39,7 +41,8 @@
                 'state'        => $_POST['state'],
                 'zip'          => $_POST['zip'],
                 'instructions' => $_POST['instructions'],
-                'subscription' => $_POST['subscription']
+                'subscription' => $_POST['subscription'],
+                'last_login'   => 'Now()'
             ]);
             $user->save();
 

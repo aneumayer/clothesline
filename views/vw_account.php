@@ -78,15 +78,36 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-form-label col-md-4" for="categories">Categories:</label>
+            <label class="col-form-label col-md-4" for="subscription">Newsletter Subscription:</label>
             <div class="col-md-8">
-                <? if ($user->subscription == 1) : ?>
-                    <p>Yes, please add this email address.</p>
-                <? elseif ($user->subscription == 2) : ?>
-                    <p>I am already subscribed.</p>
-                <?php else : ?>
-                    <p>No thank you.</p>
-                <?php endif; ?>
+                <?php
+                    if ($user->subscription == 1) {
+                        $sub_text = "Yes, please add this email address.";
+                    } elseif ($user->subscription == 2) {
+                        $sub_text = "I am already subscribed.";
+                    } else {
+                        $sub_text = "No thank you.";
+                    }
+                ?>
+                <input type="text" class="form-control" id="subscription" name="subscription" readonly value="<?= $sub_text ?>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-md-4" for="created">Last Log In:</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="subscription" name="subscription" readonly value="<?= $user->last_login->format('m/d/Y - g:i A'); ?>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-md-4" for="created">Last Update:</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="subscription" name="subscription" readonly value="<?= $user->updated_at->format('m/d/Y - g:i A'); ?>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-md-4" for="created">Date Created:</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="subscription" name="subscription" readonly value="<?= $user->created_at->format('m/d/Y - g:i A'); ?>">
             </div>
         </div>
         <div class="form-group row">

@@ -96,6 +96,29 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-form-label col-md-4" for="subscription"><?= $config['app']['org'] ?> Newsletter Subscription:</label>
+                    <div class="col-md-8">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="subscription" value="1" checked>
+                                Yes, please add this email address.
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="subscription" value="0">
+                                No thank you.
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="subscription" value="2">
+                                I am already subscribed.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="form-check-label col-md-12" for="no-throw-agreement">
                         <input id="no-throw-agreement" type="checkbox" class="form-check-input" required="true">
                             I agree to deliver clothesline bags to the next address on the

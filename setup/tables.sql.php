@@ -19,6 +19,7 @@ CREATE TABLE user (
     zip CHAR(5),
     instructions VARCHAR(1000),
     notes VARCHAR(2000),
+    subscription INTEGER(1) DEFAULT 0 NOT NULL,
     admin INTEGER(1) DEFAULT 0 NOT NULL,
     created_at DATETIME NOT NULL,
     updated_at DATETIME NOT NULL,

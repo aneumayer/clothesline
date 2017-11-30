@@ -2,7 +2,7 @@
     <h1><?= $page_title ?></h1>
 </header>
 <?php if (count($categories)) : ?>
-    <div class="col-md-4 mx-auto">
+    <div class="row col-md-4 mx-auto">
         <div class="dropdown mx-auto">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Please Select a Category

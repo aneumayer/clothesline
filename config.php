@@ -7,6 +7,7 @@ $config = [
         'from'   => 'test@email.com'
     ],
     'app' => [
+        'org'   => 'Connections, Inc.',
         'title' => 'Clothesline',
         'sess'  => 'CLOTHESLINE'
     ],

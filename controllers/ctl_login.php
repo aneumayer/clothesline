@@ -39,6 +39,7 @@
                 'state'        => $_POST['state'],
                 'zip'          => $_POST['zip'],
                 'instructions' => $_POST['instructions'],
+                'subscription' => $_POST['subscription']
             ]);
             $user->save();
 

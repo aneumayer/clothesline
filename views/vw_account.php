@@ -78,6 +78,18 @@
             </div>
         </div>
         <div class="form-group row">
+            <label class="col-form-label col-md-4" for="categories">Categories:</label>
+            <div class="col-md-8">
+                <? if ($user->subscription == 1) : ?>
+                    <p>Yes, please add this email address.</p>
+                <? elseif ($user->subscription == 2) : ?>
+                    <p>I am already subscribed.</p>
+                <?php else : ?>
+                    <p>No thank you.</p>
+                <?php endif; ?>
+            </div>
+        </div>
+        <div class="form-group row">
             <div class="col-md-12 text-right">
                 <input type="submit" class="btn btn-danger" id="delete_btn" name="delete" value="Delete" />
                 <input type="submit" class="btn btn-success" name="update" value="Save" />

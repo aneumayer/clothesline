@@ -40,7 +40,6 @@
                 'zip'          => $_POST['zip'],
                 'instructions' => $_POST['instructions'],
                 'subscription' => $_POST['subscription'],
-                'last_login'   => date(DATE_RFC822)
             ]);
             $user->save();
 

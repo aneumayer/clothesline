@@ -16,7 +16,7 @@
             break;
 
         case "address":
-            $page_title = "Next Address";
+            $page_title = "<i class=\"fa fa-map-signs\" aria-hidden=\"true\"></i> Delivery Address";
             break;
 
         /* ------ Admin Pages ------ */

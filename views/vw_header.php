@@ -33,7 +33,7 @@
                         <?php else : ?>
                             <li class="nav-item  <?= ($_GET['action'] == 'create') ? "active" : "";?>">
                                 <a class="nav-link" href="./?action=address">
-                                    <i class="fa fa-map-signs" aria-hidden="true"></i> Next Address
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i> Delivery Address
                                 </a>
                             </li>
                         <?php endif; ?>

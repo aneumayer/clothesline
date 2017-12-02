@@ -28,10 +28,8 @@
     </div>
 <?php else : ?>
     <div class="col-md-12 text-center mt-5">
-        <p>
-            We are working on adding your address to <?= $config['app']['title'] ?>.<br>
-            You will receive a welcome email with more details soon!
-        </p>
+        <p>We are working on adding your address to <?= $config['app']['title'] ?>.</p>
+        <p>You will receive a welcome email with more details soon!</p>
     </div>
 <?php endif; ?>
 

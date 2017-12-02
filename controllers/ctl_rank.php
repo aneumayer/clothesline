@@ -52,7 +52,7 @@
         if (isset($_GET['type']) && $_GET['type'] == 'CSV') {
             $f = fopen('php://memory', 'w'); 
             foreach ($ranked_users as $csv_user) { 
-                $line = "\"{$csv_user->street}, {$csv_user->city}, {$csv_user->state} {$csv_user->zip}\"";
+                $line = ["{$csv_user->street}, {$csv_user->city}, {$csv_user->state} {$csv_user->zip}"];
                 fputcsv($f, $line, ','); 
             }
             fseek($f, 0);

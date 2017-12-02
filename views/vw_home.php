@@ -3,13 +3,13 @@
     <?php if ($user->admin) : ?>
 
     <?php else : ?>
-        <p class="h2">Welcome!</p>
-        <p>Please watch this space for program announcements.</p>
+        <p class="h2 mt-5">Welcome!</p>
         <p>To find out where to take a bag of clothes, select "Delivery Address" from the menu above.</p>
         <p>Thank you for sharing clothes with your neighbors!</p>
         <p>
             Full information about <?= $config['app']['title'] ?> 
             can be found on <a href="https://www.connectionsinc.org/clothesline" target="_blank">our website</a>.
         </p>
+        <p>Please watch this space for program announcements...</p>
     <?php endif; ?>
 </div>

@@ -17,7 +17,8 @@
             'conditions' => [
                 'user_id = ? AND category_id = ?',
                 $user->id, $_GET['category']
-            ]
+            ],
+            'order'      => 'position ASC'
         ]);
         $my_pos = $me->position;
 
@@ -25,7 +26,8 @@
             'conditions' => [
                 'category_id = ? AND position > ?',
                 $_GET['category'], $my_pos
-            ]
+            ],
+            'order'      => 'position ASC'
         ]);
 
         if ($next instanceOf UserCategory) {

@@ -30,6 +30,7 @@
         <?php if (isset($_GET['category'])) : ?>
             <div class="alert alert-info mt-4" role="alert">
                 Showing results for the <i class="fa fa-<?= $category_icon ?>" aria-hidden="true"></i> <strong><?= $category_name ?></strong> category.
+                <a href="<?php echo($_SERVER['REQUEST_URI']); ?>&type=CSV" target="_blank"><i class="fa fa-table" aria-hidden="true"></i> Export</a>
             </div>
         <?php endif; ?>
         <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">

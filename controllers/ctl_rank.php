@@ -46,5 +46,20 @@
             'joins'      => 'LEFT JOIN user_category as uc ON user.id = uc.user_id',
             'order'      => 'first_name ASC'
         ]);
+        $cat_val = Category::find_by_id($_GET['category']);
+        $cat_name = $cat_val->name();
+
+        if (isset($_GET['type']) && $_GET['type'] == 'CSV') {
+            $f = fopen('php://memory', 'w'); 
+            foreach ($ranked_users as $csv_user) { 
+                $line = "\"{$csv_user->street}, {$csv_user->city}, {$csv_user->state} {$csv_user->zip}\"";
+                fputcsv($f, $line, ','); 
+            }
+            fseek($f, 0);
+            header('Content-Type: application/csv');
+            header('Content-Disposition: attachment; filename="'.$cat_name.'.csv";');
+            fpassthru($f);
+        }
+
     }
 ?>

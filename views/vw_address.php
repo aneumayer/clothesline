@@ -1,5 +1,5 @@
 <header class="text-center">
-    <h1><?= $page_title  ?></h1>
+    <h1><i class="fa fa-map-signs" aria-hidden="true"></i> Delivery Address</h1>
 </header>
 <?php if (count($categories)) : ?>
     <div class="row col-md-4 mx-auto">

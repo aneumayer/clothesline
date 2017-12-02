@@ -1,5 +1,5 @@
 <header class="text-center">
-    <h1><?= $page_title ?></h1>
+    <h1>Edit Accounts</h1>
 </header>
 <div class="col-md-10 mx-auto">
     <div class="form-group row border-primary row-header rounded">

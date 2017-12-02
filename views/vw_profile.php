@@ -1,5 +1,5 @@
 <header class="text-center">
-    <h1><?= $page_title ?></h1>
+    <h1>View Profile</h1>
 </header>
 <div class="col-md-8 mx-auto">
     <form method="post" action="<?php echo($_SERVER['REQUEST_URI']); ?>">

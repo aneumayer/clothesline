@@ -1,5 +1,5 @@
 <header class="text-center">
-    <h1><?= $page_title ?></h1>
+    <h1>Rank Accounts</h1>
 </header>
 <?php if (count($categories)) : ?>
     <div class="row col-md-4 mx-auto">

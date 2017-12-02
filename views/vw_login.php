@@ -100,9 +100,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-form-label col-md-4" for="instruction">Special Instructions:</label>
+                    <label class="col-form-label col-md-4" for="instruction">Special Instructions for Bag Delivery:</label>
                     <div class="col-md-8">
                         <textarea name="instructions" class="form-control"><?= $_POST['instructions'] ?></textarea>
+                        <span class="form-text small text-muted">
+                            Examples: leave by side door, apartment in back, etc.
+                        </span>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -134,9 +137,9 @@
                 <div class="form-group row">
                     <label class="form-check-label col-md-12" for="address-listing-agreement">
                         <input id="address-listing-agreement" type="checkbox" class="form-check-input" required="true">
-                            I acknowledge that my home address will be listed in a document available
+                            I acknowledge that my home address will be listed on a website available
                             to all participants in The Charlottesville Clothesline. My name and email
-                            address will NOT be included in this document.
+                            address will NOT be included for others to see.
                     </label>
                 </div>
                 <div class="form-group row">

@@ -69,10 +69,10 @@
                     <label class="col-form-label col-md-4" for="street">Street Address:</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="street" name="street" placeholder="Enter street address" required="true" value="<?= $_POST['street'] ?>">
+                        <span class="form-text small text-muted">
+                            Please do not use a P.O. box.
+                        </span>
                     </div>
-                    <span class="form-text small text-muted">
-                        Please do not use a P.O. box.
-                    </span>
                 </div>
                 <div class="form-group row">
                     <label class="col-form-label col-md-4" for="city">City:</label>

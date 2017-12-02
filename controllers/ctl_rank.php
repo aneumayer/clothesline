@@ -47,7 +47,7 @@
             'order'      => 'first_name ASC'
         ]);
         $cat_val = Category::find_by_id($_GET['category']);
-        $cat_name = $cat_val->name();
+        $cat_name = $cat_val->name;
 
         if (isset($_GET['type']) && $_GET['type'] == 'CSV') {
             $f = fopen('php://memory', 'w'); 

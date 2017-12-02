@@ -13,7 +13,7 @@
         </p>
         <p>
             Full information about <?= $config['app']['title'] ?> 
-            can be found on <a href="https://www.connectionsinc.org/clothesline" target="_blank">our website</a>.
+            can be found on <a href="/clothesline" target="_blank">our website</a>.
         </p>
         <p>Please watch this space for program announcements...</p>
     <?php endif; ?>

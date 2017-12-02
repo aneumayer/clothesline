@@ -31,7 +31,7 @@
             <div class="alert alert-info mt-4" role="alert">
                 Showing results for the <i class="fa fa-<?= $category_icon ?>" aria-hidden="true"></i> <strong><?= $category_name ?></strong> category.
                 <?php if (count($ranked_users)) : ?>
-                    <a href="<?php echo($_SERVER['REQUEST_URI']); ?>&type=CSV" target="_blank"><i class="fa fa-table" aria-hidden="true"></i> Export</a>
+                    <a href="<?php echo($_SERVER['REQUEST_URI']); ?>&type=CSV"><i class="fa fa-table" aria-hidden="true"></i> Export</a>
                 <?php endif; ?>
             </div>
         <?php endif; ?>

@@ -24,7 +24,7 @@
                     </a>
                 </div>
                 <div class="col-md-1 text-right my-auto">
-                    <?= $user->created_at->format('m-d-y') ?>
+                    <?= $user->created_at->format('m/d/y') ?>
                 </div>
                 <div class="col-md-1 text-right my-auto">
                     <a href="./?action=account&user_id=<?= $user->id ?>"><i class="fa fa-pencil-square-o act-btn" aria-hidden="true"></i></a>

@@ -43,10 +43,36 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-form-label col-md-4" for="subscription"><?= $config['app']['org'] ?> Newsletter Subscription:</label>
+                    <div class="col-md-8">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="subscription" value="1" checked>
+                                Yes, please add this email address.
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="subscription" value="0">
+                                No thank you.
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="subscription" value="2">
+                                I am already subscribed.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-form-label col-md-4" for="street">Street Address:</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="street" name="street" placeholder="Enter street address" required="true" value="<?= $_POST['street'] ?>">
                     </div>
+                    <span class="form-text small text-muted">
+                        Please do not use a P.O. box.
+                    </span>
                 </div>
                 <div class="form-group row">
                     <label class="col-form-label col-md-4" for="city">City:</label>
@@ -96,29 +122,6 @@
                                 echo("</label></div>");
                             }
                         ?>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-form-label col-md-4" for="subscription"><?= $config['app']['org'] ?> Newsletter Subscription:</label>
-                    <div class="col-md-8">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="subscription" value="1" checked>
-                                Yes, please add this email address.
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="subscription" value="0">
-                                No thank you.
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="subscription" value="2">
-                                I am already subscribed.
-                            </label>
-                        </div>
                     </div>
                 </div>
                 <div class="form-group row">

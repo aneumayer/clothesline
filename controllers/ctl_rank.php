@@ -59,6 +59,7 @@
             header('Content-Type: application/csv');
             header('Content-Disposition: attachment; filename="'.$cat_name.'.csv";');
             fpassthru($f);
+            die();
         }
 
     }

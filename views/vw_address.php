@@ -28,7 +28,10 @@
     </div>
 <?php else : ?>
     <div class="col-md-12 text-center mt-5">
-        <p>You currently have no groups that you are placed in.</p>
+        <p>
+            We are working on adding your address to <?= $config['app']['title'] ?>.  
+            You will receive a welcome email with more details soon!
+        </p>
     </div>
 <?php endif; ?>
 

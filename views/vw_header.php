@@ -59,22 +59,34 @@
         </nav>
         <div class="container">
             <?php if (isset($success_message)) : ?>
-                <div class="alert alert-success">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <?= $success_message ?>
                 </div>
             <?php endif; ?>
             <?php if (isset($info_message)) : ?>
-                <div class="alert alert-info">
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <?= $info_message ?>
                 </div>
             <?php endif; ?>
             <?php if (isset($warning_message)) : ?>
-                <div class="alert alert-warning">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <?= $warning_message ?>
                 </div>
             <?php endif; ?>
             <?php if (isset($error_message)) : ?>
-                <div class="alert alert-danger">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <?= $error_message ?>
                 </div>
             <?php endif; ?>

@@ -12,7 +12,7 @@
     $next_user = false;
 
     if (isset($_GET['category'])) {
-        // Get the next address for this category
+        // Get my current position in this category
         $me = UserCategory::find('first', [
             'conditions' => [
                 'user_id = ? AND category_id = ?',
@@ -22,6 +22,17 @@
         ]);
         $my_pos = $me->position;
 
+        // Get the first position in this category
+        $top = UserCategory::find('first', [
+            'conditions' => [
+                'category_id = ? AND position > 0',
+                $_GET['category']
+            ],
+            'order'      => 'position ASC'
+        ]);
+        $top_pos = $top->position;
+
+        // Get the next position in the category
         $next = UserCategory::find('first', [
             'conditions' => [
                 'category_id = ? AND position > ?',
@@ -33,11 +44,11 @@
         if ($next instanceOf UserCategory) {
             $next_user = User::find_by_id($next->user_id);
         } else {
-            if ($my_pos > 1) {
+            if ($my_pos > $top_pos) {
                 $next = UserCategory::find('first', [
                     'conditions' => [
-                        'category_id = ? AND position = 1',
-                        $_GET['category']
+                        'category_id = ? AND position = ?',
+                        $_GET['category'], $top_pos
                     ]
                 ]);
                 $next_user = User::find_by_id($next->user_id);

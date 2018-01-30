@@ -120,7 +120,7 @@
                                     }
                                 }
                                 echo("<div class=\"form-check\"><label class=\"form-check-label\">");
-                                echo("<input type=\"checkbox\" class=\"form-check-input\" name=\"categories[]\" value=\"{$category->id}\" $checked>");
+                                echo("<input type=\"checkbox\" class=\"form-check-input\" name=\"categories[]\" value=\"{$category->id}\" required $checked>");
                                 echo("<i class=\"fa fa-{$category->icon}\" aria-hidden=\"true\"></i> {$category->name}");
                                 echo("</label></div>");
                             }

@@ -50,3 +50,14 @@ $('#delete_btn').click(function(event) {
         event.preventDefault();
     }
 });
+// Function to remove the required option for categories if selected
+$(function(){
+    var requiredCheckboxes = $('.signup-categories :checkbox[required]');
+    requiredCheckboxes.change(function(){
+        if(requiredCheckboxes.is(':checked')) {
+            requiredCheckboxes.removeAttr('required');
+        } else {
+            requiredCheckboxes.attr('required', 'required');
+        }
+    });
+});

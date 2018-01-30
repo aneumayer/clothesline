@@ -30,6 +30,8 @@
             $error_message = 'Missing state.';
         } elseif (!(isset($_POST['zip']) || $_POST['zip'] == '')) {
             $error_message = 'Missing zip code.';
+        } elseif (empty($_POST['categories'])) {
+            $error_message = 'Missing category.';
         } else {
             $user = new User([
                 'first_name'   => $_POST['first_name'],

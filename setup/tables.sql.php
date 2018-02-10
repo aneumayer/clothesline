@@ -18,6 +18,7 @@ CREATE TABLE user (
     state CHAR(2),
     zip CHAR(5),
     instructions VARCHAR(1000),
+    referral VARCHAR(1000),
     notes VARCHAR(2000),
     subscription INTEGER(1) DEFAULT 0 NOT NULL,
     admin INTEGER(1) DEFAULT 0 NOT NULL,

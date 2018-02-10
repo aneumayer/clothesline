@@ -30,6 +30,8 @@
             $error_message = 'Missing state.';
         } elseif (!(isset($_POST['zip']) || $_POST['zip'] == '')) {
             $error_message = 'Missing zip code.';
+        } elseif (!(isset($_POST['referral']) || $_POST['referral'] == '')) {
+            $error_message = 'Missing how you heard about us.';
         } elseif (empty($_POST['categories'])) {
             $error_message = 'Missing category.';
         } else {
@@ -41,6 +43,7 @@
                 'state'        => $_POST['state'],
                 'zip'          => $_POST['zip'],
                 'instructions' => $_POST['instructions'],
+                'referral'     => $_POST['referral'],
                 'subscription' => $_POST['subscription'],
             ]);
             $user->save();

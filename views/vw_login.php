@@ -109,6 +109,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-form-label col-md-4" for="referral">How did you hear about <?= $config['app']['title'] ?>:</label>
+                    <div class="col-md-8">
+                        <textarea name="referral" class="form-control" required="true"><?= $_POST['referral'] ?></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-form-label col-md-4" for="categories">Categories:</label>
                     <div class="col-md-8 signup-categories">
                         <?php

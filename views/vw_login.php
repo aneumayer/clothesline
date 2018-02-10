@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-form-label col-md-4" for="referral">How did you find out about <?= $config['app']['title'] ?>:</label>
+                    <label class="col-form-label col-md-4" for="referral">How did you find out about <?= $config['app']['title'] ?>?</label>
                     <div class="col-md-8">
                         <textarea name="referral" class="form-control" required="true"><?= $_POST['referral'] ?></textarea>
                     </div>
